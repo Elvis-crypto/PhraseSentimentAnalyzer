@@ -45,24 +45,26 @@
 
 2. **Create a Conda Environment:**
 
-   ```conda create -n phrase_env python=3.9
+   ```
+   conda create -n phrase_env python=3.9
    conda activate phrase_env
    ```
 
 3. **Install Required Packages:**
-   ```pip install -r requirements.txt
-
+   ```
+   pip install -r requirements.txt
    ```
 4. **Download NLTK Data (VADER Lexicon):**
-   ```python -m nltk.downloader vader_lexicon
-
+   ```
+   python -m nltk.downloader vader_lexicon
    ```
 5. **Verify Installations:**
-   ```python verify_installations.py
-
+   ```
+   python verify_installations.py
    ```
    **Expected Output:**
-   ```Python version: 3.9.19 (main, May  6 2024, 20:12:36) [MSC v.1916 64 bit (AMD64)]
+   ```
+   Python version: 3.9.19 (main, May  6 2024, 20:12:36) [MSC v.1916 64 bit (AMD64)]
    praw version: 7.7.1
    spaCy version: 3.7.6
    gensim version: 4.1.2
@@ -75,12 +77,12 @@
    pydantic version: 1.10.9
    ```
 6. ** Test Loading the spaCy Model:**
-   ```python test_spacy.py
-
+   ```
+   python test_spacy.py
    ```
    **Expected Output:**
-   ```spaCy model loaded successfully.
-
+   ```
+   spaCy model loaded successfully.
    ```
 
 ## **Usage**
