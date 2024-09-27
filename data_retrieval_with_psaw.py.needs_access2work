@@ -1,0 +1,64 @@
+# data_retrieval.py
+
+import datetime
+from psaw import PushshiftAPI
+import praw
+from phrase_config import Config
+
+class DataRetriever:
+    def __init__(self, config):
+        self.config = config
+        self.reddit = praw.Reddit(
+            client_id=self.config.reddit_config['client_id'],
+            client_secret=self.config.reddit_config['client_secret'],
+            user_agent=self.config.reddit_config['user_agent'],
+            username=self.config.reddit_config['username'],
+            password=self.config.reddit_config['password']
+        )
+        self.api = PushshiftAPI(self.reddit)
+
+    def fetch_posts_comments(self, phrase, limit=100):
+        """
+        Fetch posts and comments containing the specified phrase.
+        """
+        posts = self.fetch_submissions(phrase, limit)
+        comments = self.fetch_comments(phrase, limit)
+        return posts, comments
+
+    def fetch_submissions(self, phrase, limit):
+        """
+        Fetch submissions containing the phrase.
+        """
+        print(f"Fetching submissions for phrase: {phrase}")
+        gen = self.api.search_submissions(
+            q=f'"{phrase}"',
+            limit=limit,
+            subreddit=self.config.reddit_config.get('subreddits'),
+            sort='desc',
+            sort_type='created_utc'
+        )
+        submissions = list(gen)
+        return submissions
+
+    def fetch_comments(self, phrase, limit):
+        """
+        Fetch comments containing the phrase.
+        """
+        print(f"Fetching comments for phrase: {phrase}")
+        gen = self.api.search_comments(
+            q=f'"{phrase}"',
+            limit=limit,
+            subreddit=self.config.reddit_config.get('subreddits'),
+            sort='desc',
+            sort_type='created_utc'
+        )
+        comments = list(gen)
+        return comments
+
+# Test the module
+if __name__ == "__main__":
+    config = Config()
+    retriever = DataRetriever(config)
+    test_phrase = config.phrases[0]
+    posts, comments = retriever.fetch_posts_comments(test_phrase, limit=10)
+    print(f"Retrieved {len(posts)} posts and {len(comments)} comments for phrase '{test_phrase}'.")

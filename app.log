@@ -1,0 +1,443 @@
+2024-09-27 21:52:31,068 - INFO - Starting the sentiment analysis pipeline.
+2024-09-27 21:52:31,383 - INFO - Configuration and initialization took 0.32 seconds.
+2024-09-27 21:52:31,383 - INFO - Processing phrase: yeast extract
+2024-09-27 21:52:35,261 - INFO - Data retrieval for phrase 'yeast extract' took 3.88 seconds.
+2024-09-27 21:52:35,271 - INFO - Preprocessing for topic modeling took 0.01 seconds.
+2024-09-27 21:52:35,271 - INFO - adding document #0 to Dictionary(0 unique tokens: [])
+2024-09-27 21:52:35,275 - INFO - built Dictionary(1845 unique tokens: ['bad', 'bean', 'beef', 'carcinogenic', 'extract']...) from 200 documents (total 5096 corpus positions)
+2024-09-27 21:52:35,297 - INFO - Dictionary lifecycle event {'msg': "built Dictionary(1845 unique tokens: ['bad', 'bean', 'beef', 'carcinogenic', 'extract']...) from 200 documents (total 5096 corpus positions)", 'datetime': '2024-09-27T21:52:35.275231', 'gensim': '4.1.2', 'python': '3.9.19 (main, May  6 2024, 20:12:36) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.19045-SP0', 'event': 'created'}
+2024-09-27 21:52:35,298 - INFO - discarding 1639 tokens: [('bean', 2), ('flavourings', 2), ('flavours', 1), ('garli', 1), ('onion', 3), ('oy', 1), ('powder', 1), ('sauce', 1), ('cal', 2), ('calcium', 1)]...
+2024-09-27 21:52:35,298 - INFO - keeping 206 tokens which were in no less than 5 and no more than 100 (=50.0%) documents
+2024-09-27 21:52:35,299 - INFO - resulting dictionary: Dictionary(206 unique tokens: ['bad', 'beef', 'carcinogenic', 'extract', 'ingredients']...)
+2024-09-27 21:52:35,300 - INFO - using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+2024-09-27 21:52:35,301 - INFO - using serial LDA version on this node
+2024-09-27 21:52:35,301 - INFO - running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 200 documents, updating model once every 200 documents, evaluating perplexity every 200 documents, iterating 100x with a convergence threshold of 0.001000
+2024-09-27 21:52:35,357 - INFO - -6.329 per-word bound, 80.4 perplexity estimate based on a held-out corpus of 200 documents with 2321 words
+2024-09-27 21:52:35,357 - INFO - PROGRESS: pass 0, at document #200/200
+2024-09-27 21:52:35,407 - INFO - optimized alpha [0.135568, 0.14074965, 0.1683347, 0.13129936, 0.17012532]
+2024-09-27 21:52:35,407 - INFO - topic #0 (0.136): 0.043*"it" + 0.036*"oil" + 0.027*"ingredients" + 0.024*"natural" + 0.023*"know" + 0.020*"sunflower" + 0.019*"consumption" + 0.018*"good" + 0.017*"don" + 0.017*"lot"
+2024-09-27 21:52:35,407 - INFO - topic #1 (0.141): 0.045*"it" + 0.031*"msg" + 0.028*"products" + 0.027*"like" + 0.027*"ingredients" + 0.023*"yeast" + 0.022*"marmite" + 0.021*"don" + 0.018*"people" + 0.018*"processed"
+2024-09-27 21:52:35,407 - INFO - topic #2 (0.168): 0.038*"it" + 0.035*"you" + 0.025*"re" + 0.022*"like" + 0.022*"butter" + 0.021*"chips" + 0.019*"oil" + 0.019*"char" + 0.017*"calories" + 0.017*"yeast"
+2024-09-27 21:52:35,407 - INFO - topic #3 (0.131): 0.056*"science" + 0.034*"sources" + 0.026*"chips" + 0.021*"like" + 0.021*"that" + 0.020*"nutrition" + 0.019*"oil" + 0.017*"rapeseed" + 0.016*"eat" + 0.015*"subreddit"
+2024-09-27 21:52:35,407 - INFO - topic #4 (0.170): 0.047*"it" + 0.043*"processed" + 0.035*"meat" + 0.023*"food" + 0.019*"like" + 0.018*"natural" + 0.016*"bad" + 0.015*"re" + 0.014*"meats" + 0.013*"science"
+2024-09-27 21:52:35,407 - INFO - topic diff=2.015022, rho=1.000000
+2024-09-27 21:52:35,441 - INFO - -5.354 per-word bound, 40.9 perplexity estimate based on a held-out corpus of 200 documents with 2321 words
+2024-09-27 21:52:35,441 - INFO - PROGRESS: pass 1, at document #200/200
+2024-09-27 21:52:35,467 - INFO - optimized alpha [0.12246999, 0.12450822, 0.15568921, 0.111033484, 0.15143129]
+2024-09-27 21:52:35,467 - INFO - topic #0 (0.122): 0.044*"it" + 0.038*"oil" + 0.027*"ingredients" + 0.024*"know" + 0.024*"natural" + 0.022*"sunflower" + 0.019*"don" + 0.019*"lot" + 0.019*"consumption" + 0.017*"good"
+2024-09-27 21:52:35,467 - INFO - topic #1 (0.125): 0.047*"it" + 0.032*"like" + 0.031*"msg" + 0.029*"products" + 0.028*"yeast" + 0.027*"marmite" + 0.027*"ingredients" + 0.020*"flavor" + 0.019*"don" + 0.018*"people"
+2024-09-27 21:52:35,467 - INFO - topic #2 (0.156): 0.040*"it" + 0.039*"you" + 0.027*"re" + 0.026*"like" + 0.024*"chips" + 0.022*"butter" + 0.020*"char" + 0.019*"oil" + 0.017*"calories" + 0.016*"don"
+2024-09-27 21:52:35,467 - INFO - topic #3 (0.111): 0.073*"science" + 0.041*"sources" + 0.025*"nutrition" + 0.022*"chips" + 0.021*"subreddit" + 0.021*"debate" + 0.017*"like" + 0.016*"to" + 0.015*"oil" + 0.015*"rapeseed"
+2024-09-27 21:52:35,467 - INFO - topic #4 (0.151): 0.051*"processed" + 0.044*"meat" + 0.044*"it" + 0.024*"food" + 0.021*"natural" + 0.017*"bad" + 0.016*"like" + 0.016*"meats" + 0.014*"re" + 0.012*"beef"
+2024-09-27 21:52:35,467 - INFO - topic diff=0.241896, rho=0.577350
+2024-09-27 21:52:35,497 - INFO - -5.251 per-word bound, 38.1 perplexity estimate based on a held-out corpus of 200 documents with 2321 words
+2024-09-27 21:52:35,497 - INFO - PROGRESS: pass 2, at document #200/200
+2024-09-27 21:52:35,520 - INFO - optimized alpha [0.113893114, 0.11352018, 0.14744325, 0.097393826, 0.13949966]
+2024-09-27 21:52:35,520 - INFO - topic #0 (0.114): 0.044*"it" + 0.040*"oil" + 0.028*"ingredients" + 0.025*"know" + 0.023*"natural" + 0.023*"sunflower" + 0.020*"don" + 0.020*"lot" + 0.019*"consumption" + 0.017*"study"
+2024-09-27 21:52:35,520 - INFO - topic #1 (0.114): 0.048*"it" + 0.034*"like" + 0.031*"marmite" + 0.031*"msg" + 0.031*"yeast" + 0.030*"products" + 0.026*"ingredients" + 0.022*"flavor" + 0.018*"vegemite" + 0.018*"don"
+2024-09-27 21:52:35,520 - INFO - topic #2 (0.147): 0.041*"you" + 0.040*"it" + 0.029*"re" + 0.029*"like" + 0.028*"chips" + 0.022*"butter" + 0.020*"char" + 0.018*"calories" + 0.018*"oil" + 0.017*"don"
+2024-09-27 21:52:35,520 - INFO - topic #3 (0.097): 0.083*"science" + 0.045*"sources" + 0.028*"nutrition" + 0.024*"subreddit" + 0.024*"debate" + 0.017*"to" + 0.016*"chips" + 0.015*"best" + 0.015*"rapeseed" + 0.015*"people"
+2024-09-27 21:52:35,520 - INFO - topic #4 (0.139): 0.056*"processed" + 0.050*"meat" + 0.042*"it" + 0.025*"food" + 0.023*"natural" + 0.017*"meats" + 0.017*"bad" + 0.014*"like" + 0.014*"beef" + 0.014*"chicken"
+2024-09-27 21:52:35,520 - INFO - topic diff=0.198548, rho=0.500000
+2024-09-27 21:52:35,550 - INFO - -5.202 per-word bound, 36.8 perplexity estimate based on a held-out corpus of 200 documents with 2321 words
+2024-09-27 21:52:35,550 - INFO - PROGRESS: pass 3, at document #200/200
+2024-09-27 21:52:35,571 - INFO - optimized alpha [0.1079155, 0.10664772, 0.14234135, 0.08685404, 0.131345]
+2024-09-27 21:52:35,571 - INFO - topic #0 (0.108): 0.046*"it" + 0.042*"oil" + 0.029*"ingredients" + 0.025*"know" + 0.024*"sunflower" + 0.022*"natural" + 0.021*"lot" + 0.021*"don" + 0.019*"consumption" + 0.018*"study"
+2024-09-27 21:52:35,571 - INFO - topic #1 (0.107): 0.048*"it" + 0.035*"like" + 0.034*"yeast" + 0.033*"marmite" + 0.031*"products" + 0.030*"msg" + 0.024*"ingredients" + 0.022*"flavor" + 0.021*"vegemite" + 0.018*"acid"
+2024-09-27 21:52:35,572 - INFO - topic #2 (0.142): 0.042*"you" + 0.039*"it" + 0.032*"chips" + 0.030*"like" + 0.030*"re" + 0.021*"butter" + 0.020*"char" + 0.019*"calories" + 0.017*"oil" + 0.017*"don"
+2024-09-27 21:52:35,572 - INFO - topic #3 (0.087): 0.092*"science" + 0.048*"sources" + 0.029*"nutrition" + 0.027*"subreddit" + 0.027*"debate" + 0.019*"to" + 0.017*"removed" + 0.016*"best" + 0.016*"actual" + 0.015*"compose"
+2024-09-27 21:52:35,572 - INFO - topic #4 (0.131): 0.058*"processed" + 0.054*"meat" + 0.041*"it" + 0.025*"food" + 0.024*"natural" + 0.018*"meats" + 0.017*"bad" + 0.015*"beef" + 0.015*"chicken" + 0.014*"carcinogens"
+2024-09-27 21:52:35,572 - INFO - topic diff=0.175420, rho=0.447214
+2024-09-27 21:52:35,600 - INFO - -5.175 per-word bound, 36.1 perplexity estimate based on a held-out corpus of 200 documents with 2321 words
+2024-09-27 21:52:35,600 - INFO - PROGRESS: pass 4, at document #200/200
+2024-09-27 21:52:35,621 - INFO - optimized alpha [0.103331625, 0.101654775, 0.13845964, 0.079393536, 0.12468255]
+2024-09-27 21:52:35,621 - INFO - topic #0 (0.103): 0.046*"it" + 0.044*"oil" + 0.030*"ingredients" + 0.026*"know" + 0.025*"sunflower" + 0.022*"natural" + 0.022*"lot" + 0.022*"don" + 0.019*"consumption" + 0.019*"that"
+2024-09-27 21:52:35,621 - INFO - topic #1 (0.102): 0.050*"it" + 0.037*"yeast" + 0.036*"marmite" + 0.034*"like" + 0.032*"products" + 0.030*"msg" + 0.023*"flavor" + 0.023*"ingredients" + 0.023*"vegemite" + 0.018*"acid"
+2024-09-27 21:52:35,621 - INFO - topic #2 (0.138): 0.044*"you" + 0.038*"it" + 0.034*"chips" + 0.031*"like" + 0.031*"re" + 0.021*"butter" + 0.020*"char" + 0.020*"calories" + 0.018*"potato" + 0.017*"don"
+2024-09-27 21:52:35,621 - INFO - topic #3 (0.079): 0.097*"science" + 0.051*"sources" + 0.030*"nutrition" + 0.029*"subreddit" + 0.028*"debate" + 0.019*"to" + 0.019*"removed" + 0.018*"actual" + 0.017*"automatically" + 0.017*"best"
+2024-09-27 21:52:35,621 - INFO - topic #4 (0.125): 0.060*"processed" + 0.056*"meat" + 0.040*"it" + 0.026*"food" + 0.024*"natural" + 0.019*"meats" + 0.017*"bad" + 0.016*"chicken" + 0.016*"beef" + 0.015*"carcinogens"
+2024-09-27 21:52:35,621 - INFO - topic diff=0.148048, rho=0.408248
+2024-09-27 21:52:35,650 - INFO - -5.158 per-word bound, 35.7 perplexity estimate based on a held-out corpus of 200 documents with 2321 words
+2024-09-27 21:52:35,650 - INFO - PROGRESS: pass 5, at document #200/200
+2024-09-27 21:52:35,669 - INFO - optimized alpha [0.09950337, 0.09740198, 0.1355535, 0.073495336, 0.12011445]
+2024-09-27 21:52:35,669 - INFO - topic #0 (0.100): 0.046*"it" + 0.045*"oil" + 0.031*"ingredients" + 0.026*"know" + 0.025*"sunflower" + 0.023*"lot" + 0.023*"don" + 0.022*"natural" + 0.020*"that" + 0.019*"consumption"
+2024-09-27 21:52:35,669 - INFO - topic #1 (0.097): 0.051*"it" + 0.039*"yeast" + 0.038*"marmite" + 0.034*"like" + 0.032*"products" + 0.030*"msg" + 0.024*"vegemite" + 0.023*"flavor" + 0.021*"ingredients" + 0.018*"try"
+2024-09-27 21:52:35,669 - INFO - topic #2 (0.136): 0.045*"you" + 0.038*"it" + 0.036*"chips" + 0.032*"re" + 0.032*"like" + 0.021*"butter" + 0.020*"calories" + 0.020*"char" + 0.019*"potato" + 0.017*"don"
+2024-09-27 21:52:35,669 - INFO - topic #3 (0.073): 0.101*"science" + 0.053*"sources" + 0.031*"nutrition" + 0.030*"subreddit" + 0.030*"debate" + 0.020*"to" + 0.020*"actual" + 0.020*"removed" + 0.019*"automatically" + 0.018*"best"
+2024-09-27 21:52:35,669 - INFO - topic #4 (0.120): 0.061*"processed" + 0.058*"meat" + 0.039*"it" + 0.026*"food" + 0.023*"natural" + 0.020*"meats" + 0.017*"bad" + 0.017*"chicken" + 0.016*"beef" + 0.016*"carcinogens"
+2024-09-27 21:52:35,669 - INFO - topic diff=0.124784, rho=0.377964
+2024-09-27 21:52:35,695 - INFO - -5.147 per-word bound, 35.4 perplexity estimate based on a held-out corpus of 200 documents with 2321 words
+2024-09-27 21:52:35,695 - INFO - PROGRESS: pass 6, at document #200/200
+2024-09-27 21:52:35,714 - INFO - optimized alpha [0.09606744, 0.09405528, 0.13341947, 0.068665765, 0.11652858]
+2024-09-27 21:52:35,714 - INFO - topic #0 (0.096): 0.047*"it" + 0.046*"oil" + 0.033*"ingredients" + 0.026*"sunflower" + 0.026*"know" + 0.023*"lot" + 0.023*"don" + 0.022*"natural" + 0.020*"that" + 0.019*"consumption"
+2024-09-27 21:52:35,714 - INFO - topic #1 (0.094): 0.051*"it" + 0.040*"yeast" + 0.039*"marmite" + 0.034*"like" + 0.033*"products" + 0.030*"msg" + 0.025*"vegemite" + 0.023*"flavor" + 0.019*"try" + 0.019*"ingredients"
+2024-09-27 21:52:35,714 - INFO - topic #2 (0.133): 0.046*"you" + 0.038*"it" + 0.037*"chips" + 0.034*"re" + 0.032*"like" + 0.021*"butter" + 0.021*"calories" + 0.020*"char" + 0.020*"potato" + 0.018*"don"
+2024-09-27 21:52:35,714 - INFO - topic #3 (0.069): 0.104*"science" + 0.054*"sources" + 0.032*"nutrition" + 0.031*"subreddit" + 0.031*"debate" + 0.021*"actual" + 0.020*"removed" + 0.020*"automatically" + 0.019*"to" + 0.018*"best"
+2024-09-27 21:52:35,714 - INFO - topic #4 (0.117): 0.061*"processed" + 0.059*"meat" + 0.038*"it" + 0.026*"food" + 0.023*"natural" + 0.020*"meats" + 0.017*"bad" + 0.017*"chicken" + 0.017*"beef" + 0.016*"carcinogens"
+2024-09-27 21:52:35,714 - INFO - topic diff=0.105096, rho=0.353553
+2024-09-27 21:52:35,740 - INFO - -5.138 per-word bound, 35.2 perplexity estimate based on a held-out corpus of 200 documents with 2321 words
+2024-09-27 21:52:35,740 - INFO - PROGRESS: pass 7, at document #200/200
+2024-09-27 21:52:35,757 - INFO - optimized alpha [0.09277017, 0.091147535, 0.13135694, 0.064824134, 0.113384366]
+2024-09-27 21:52:35,758 - INFO - topic #0 (0.093): 0.047*"oil" + 0.046*"it" + 0.034*"ingredients" + 0.027*"sunflower" + 0.026*"know" + 0.023*"lot" + 0.023*"don" + 0.022*"natural" + 0.020*"that" + 0.019*"canola"
+2024-09-27 21:52:35,758 - INFO - topic #1 (0.091): 0.051*"it" + 0.041*"yeast" + 0.040*"marmite" + 0.033*"like" + 0.033*"products" + 0.030*"msg" + 0.025*"vegemite" + 0.023*"flavor" + 0.020*"try" + 0.019*"salt"
+2024-09-27 21:52:35,758 - INFO - topic #2 (0.131): 0.048*"you" + 0.038*"chips" + 0.037*"it" + 0.035*"re" + 0.033*"like" + 0.021*"calories" + 0.021*"butter" + 0.020*"potato" + 0.020*"char" + 0.018*"don"
+2024-09-27 21:52:35,758 - INFO - topic #3 (0.065): 0.105*"science" + 0.055*"sources" + 0.033*"nutrition" + 0.031*"subreddit" + 0.031*"debate" + 0.022*"actual" + 0.021*"removed" + 0.020*"automatically" + 0.019*"to" + 0.018*"best"
+2024-09-27 21:52:35,758 - INFO - topic #4 (0.113): 0.062*"processed" + 0.059*"meat" + 0.038*"it" + 0.026*"food" + 0.023*"natural" + 0.020*"meats" + 0.017*"bad" + 0.017*"chicken" + 0.017*"beef" + 0.016*"carcinogens"
+2024-09-27 21:52:35,758 - INFO - topic diff=0.087177, rho=0.333333
+2024-09-27 21:52:35,783 - INFO - -5.132 per-word bound, 35.1 perplexity estimate based on a held-out corpus of 200 documents with 2321 words
+2024-09-27 21:52:35,783 - INFO - PROGRESS: pass 8, at document #200/200
+2024-09-27 21:52:35,800 - INFO - optimized alpha [0.089939535, 0.08848853, 0.13004234, 0.061609372, 0.11061705]
+2024-09-27 21:52:35,800 - INFO - topic #0 (0.090): 0.047*"oil" + 0.046*"it" + 0.035*"ingredients" + 0.027*"sunflower" + 0.026*"know" + 0.024*"lot" + 0.024*"don" + 0.022*"natural" + 0.021*"that" + 0.020*"canola"
+2024-09-27 21:52:35,800 - INFO - topic #1 (0.088): 0.051*"it" + 0.041*"yeast" + 0.040*"marmite" + 0.034*"products" + 0.032*"like" + 0.030*"msg" + 0.027*"vegemite" + 0.023*"flavor" + 0.020*"try" + 0.020*"salt"
+2024-09-27 21:52:35,801 - INFO - topic #2 (0.130): 0.048*"you" + 0.039*"chips" + 0.038*"it" + 0.036*"re" + 0.033*"like" + 0.022*"calories" + 0.021*"butter" + 0.021*"potato" + 0.020*"char" + 0.018*"they"
+2024-09-27 21:52:35,801 - INFO - topic #3 (0.062): 0.107*"science" + 0.055*"sources" + 0.033*"nutrition" + 0.031*"subreddit" + 0.031*"debate" + 0.023*"actual" + 0.021*"removed" + 0.021*"automatically" + 0.019*"to" + 0.018*"best"
+2024-09-27 21:52:35,801 - INFO - topic #4 (0.111): 0.062*"processed" + 0.060*"meat" + 0.038*"it" + 0.026*"food" + 0.023*"natural" + 0.021*"meats" + 0.017*"bad" + 0.017*"chicken" + 0.017*"beef" + 0.017*"carcinogens"
+2024-09-27 21:52:35,801 - INFO - topic diff=0.073044, rho=0.316228
+2024-09-27 21:52:35,826 - INFO - -5.126 per-word bound, 34.9 perplexity estimate based on a held-out corpus of 200 documents with 2321 words
+2024-09-27 21:52:35,826 - INFO - PROGRESS: pass 9, at document #200/200
+2024-09-27 21:52:35,844 - INFO - optimized alpha [0.08789699, 0.086301215, 0.12854883, 0.0587559, 0.10796033]
+2024-09-27 21:52:35,844 - INFO - topic #0 (0.088): 0.049*"oil" + 0.046*"it" + 0.036*"ingredients" + 0.027*"sunflower" + 0.026*"know" + 0.024*"don" + 0.024*"lot" + 0.022*"natural" + 0.021*"that" + 0.020*"canola"
+2024-09-27 21:52:35,844 - INFO - topic #1 (0.086): 0.051*"it" + 0.042*"yeast" + 0.041*"marmite" + 0.034*"products" + 0.031*"like" + 0.030*"msg" + 0.027*"vegemite" + 0.023*"flavor" + 0.020*"try" + 0.020*"salt"
+2024-09-27 21:52:35,844 - INFO - topic #2 (0.129): 0.049*"you" + 0.039*"chips" + 0.038*"it" + 0.037*"re" + 0.034*"like" + 0.022*"calories" + 0.021*"butter" + 0.021*"potato" + 0.020*"char" + 0.019*"they"
+2024-09-27 21:52:35,844 - INFO - topic #3 (0.059): 0.108*"science" + 0.056*"sources" + 0.034*"nutrition" + 0.032*"subreddit" + 0.032*"debate" + 0.023*"actual" + 0.021*"removed" + 0.021*"automatically" + 0.019*"to" + 0.019*"best"
+2024-09-27 21:52:35,844 - INFO - topic #4 (0.108): 0.063*"processed" + 0.060*"meat" + 0.037*"it" + 0.027*"food" + 0.023*"natural" + 0.021*"meats" + 0.017*"bad" + 0.017*"chicken" + 0.017*"beef" + 0.017*"carcinogens"
+2024-09-27 21:52:35,844 - INFO - topic diff=0.066151, rho=0.301511
+2024-09-27 21:52:35,845 - INFO - LdaModel lifecycle event {'msg': 'trained LdaModel(num_terms=206, num_topics=5, decay=0.5, chunksize=2000) in 0.54s', 'datetime': '2024-09-27T21:52:35.845847', 'gensim': '4.1.2', 'python': '3.9.19 (main, May  6 2024, 20:12:36) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.19045-SP0', 'event': 'created'}
+2024-09-27 21:52:35,845 - INFO - LDA model built successfully.
+2024-09-27 21:52:35,845 - INFO - Topic modeling took 0.57 seconds.
+2024-09-27 21:52:35,873 - INFO - Total time for processing phrase 'yeast extract' was 4.49 seconds.
+2024-09-27 21:52:35,873 - INFO - Processing phrase: natural aroma
+2024-09-27 21:52:36,073 - INFO - Data retrieval for phrase 'natural aroma' took 0.20 seconds.
+2024-09-27 21:52:36,073 - INFO - Preprocessing for topic modeling took 0.00 seconds.
+2024-09-27 21:52:36,073 - WARNING - No processed texts available for phrase 'natural aroma'. Skipping LDA modeling.
+2024-09-27 21:52:36,073 - INFO - Processing phrase: natural flavoring
+2024-09-27 21:53:03,921 - INFO - Data retrieval for phrase 'natural flavoring' took 27.85 seconds.
+2024-09-27 21:53:03,998 - INFO - Preprocessing for topic modeling took 0.08 seconds.
+2024-09-27 21:53:03,998 - INFO - adding document #0 to Dictionary(0 unique tokens: [])
+2024-09-27 21:53:04,024 - INFO - built Dictionary(6529 unique tokens: ['answer', 'artificial', 'bit', 'carb', 'colors']...) from 1537 documents (total 38765 corpus positions)
+2024-09-27 21:53:04,024 - INFO - Dictionary lifecycle event {'msg': "built Dictionary(6529 unique tokens: ['answer', 'artificial', 'bit', 'carb', 'colors']...) from 1537 documents (total 38765 corpus positions)", 'datetime': '2024-09-27T21:53:04.024565', 'gensim': '4.1.2', 'python': '3.9.19 (main, May  6 2024, 20:12:36) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.19045-SP0', 'event': 'created'}
+2024-09-27 21:53:04,027 - INFO - discarding 5107 tokens: [('convenience', 3), ('discipline', 1), ('enables', 1), ('macros', 2), ('make', 2), ('afterwards', 1), ('fits', 2), ('freeze', 2), ('balanced', 1), ('boost', 2)]...
+2024-09-27 21:53:04,027 - INFO - keeping 1422 tokens which were in no less than 5 and no more than 768 (=50.0%) documents
+2024-09-27 21:53:04,028 - INFO - resulting dictionary: Dictionary(1422 unique tokens: ['answer', 'artificial', 'bit', 'carb', 'colors']...)
+2024-09-27 21:53:04,085 - INFO - using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+2024-09-27 21:53:04,085 - INFO - using serial LDA version on this node
+2024-09-27 21:53:04,086 - INFO - running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 1537 documents, updating model once every 1537 documents, evaluating perplexity every 1537 documents, iterating 100x with a convergence threshold of 0.001000
+2024-09-27 21:53:04,622 - INFO - -8.049 per-word bound, 264.9 perplexity estimate based on a held-out corpus of 1537 documents with 29822 words
+2024-09-27 21:53:04,622 - INFO - PROGRESS: pass 0, at document #1537/1537
+2024-09-27 21:53:05,094 - INFO - optimized alpha [0.12240318, 0.17448142, 0.1226763, 0.13295336, 0.15781425]
+2024-09-27 21:53:05,095 - INFO - topic #0 (0.122): 0.020*"milk" + 0.015*"sugar" + 0.011*"meat" + 0.011*"don" + 0.011*"it" + 0.010*"water" + 0.009*"good" + 0.008*"almond" + 0.007*"energy" + 0.007*"drink"
+2024-09-27 21:53:05,095 - INFO - topic #1 (0.174): 0.028*"it" + 0.021*"natural" + 0.019*"like" + 0.014*"water" + 0.012*"you" + 0.011*"ingredients" + 0.010*"flavors" + 0.007*"sugar" + 0.007*"re" + 0.007*"don"
+2024-09-27 21:53:05,095 - INFO - topic #2 (0.123): 0.019*"it" + 0.017*"water" + 0.015*"science" + 0.009*"sources" + 0.008*"you" + 0.007*"like" + 0.007*"natural" + 0.007*"don" + 0.007*"re" + 0.006*"discussion"
+2024-09-27 21:53:05,095 - INFO - topic #3 (0.133): 0.018*"it" + 0.014*"food" + 0.010*"mg" + 0.009*"protein" + 0.009*"water" + 0.008*"acid" + 0.007*"natural" + 0.007*"don" + 0.007*"flavor" + 0.007*"science"
+2024-09-27 21:53:05,096 - INFO - topic #4 (0.158): 0.015*"natural" + 0.014*"it" + 0.012*"sugar" + 0.011*"protein" + 0.011*"food" + 0.010*"flavor" + 0.008*"like" + 0.008*"flavors" + 0.008*"water" + 0.008*"good"
+2024-09-27 21:53:05,096 - INFO - topic diff=1.529235, rho=1.000000
+2024-09-27 21:53:05,452 - INFO - -6.892 per-word bound, 118.8 perplexity estimate based on a held-out corpus of 1537 documents with 29822 words
+2024-09-27 21:53:05,453 - INFO - PROGRESS: pass 1, at document #1537/1537
+2024-09-27 21:53:05,730 - INFO - optimized alpha [0.10752893, 0.1685839, 0.10091321, 0.11171754, 0.13794278]
+2024-09-27 21:53:05,731 - INFO - topic #0 (0.108): 0.022*"milk" + 0.016*"sugar" + 0.012*"meat" + 0.012*"don" + 0.011*"it" + 0.009*"water" + 0.008*"good" + 0.008*"ingredients" + 0.008*"almond" + 0.008*"drink"
+2024-09-27 21:53:05,731 - INFO - topic #1 (0.169): 0.030*"it" + 0.020*"natural" + 0.019*"like" + 0.016*"water" + 0.013*"you" + 0.011*"ingredients" + 0.010*"flavors" + 0.008*"re" + 0.007*"drink" + 0.007*"don"
+2024-09-27 21:53:05,731 - INFO - topic #2 (0.101): 0.024*"science" + 0.014*"it" + 0.014*"sources" + 0.013*"water" + 0.010*"discussion" + 0.009*"claims" + 0.008*"nutrition" + 0.007*"subreddit" + 0.007*"debate" + 0.007*"hostility"
+2024-09-27 21:53:05,731 - INFO - topic #3 (0.112): 0.016*"it" + 0.015*"food" + 0.012*"mg" + 0.011*"protein" + 0.009*"acid" + 0.008*"vitamin" + 0.008*"water" + 0.008*"whey" + 0.007*"don" + 0.007*"natural"
+2024-09-27 21:53:05,731 - INFO - topic #4 (0.138): 0.017*"natural" + 0.015*"it" + 0.013*"sugar" + 0.012*"food" + 0.012*"flavor" + 0.011*"protein" + 0.008*"flavors" + 0.008*"like" + 0.008*"ingredients" + 0.008*"water"
+2024-09-27 21:53:05,731 - INFO - topic diff=0.306963, rho=0.577350
+2024-09-27 21:53:06,050 - INFO - -6.785 per-word bound, 110.3 perplexity estimate based on a held-out corpus of 1537 documents with 29822 words
+2024-09-27 21:53:06,050 - INFO - PROGRESS: pass 2, at document #1537/1537
+2024-09-27 21:53:06,290 - INFO - optimized alpha [0.09891418, 0.164904, 0.086334035, 0.100433424, 0.12786262]
+2024-09-27 21:53:06,290 - INFO - topic #0 (0.099): 0.023*"milk" + 0.017*"sugar" + 0.013*"meat" + 0.012*"don" + 0.011*"it" + 0.009*"ingredients" + 0.008*"water" + 0.008*"almond" + 0.008*"drink" + 0.008*"good"
+2024-09-27 21:53:06,290 - INFO - topic #1 (0.165): 0.032*"it" + 0.020*"like" + 0.019*"water" + 0.019*"natural" + 0.013*"you" + 0.010*"ingredients" + 0.010*"flavors" + 0.008*"re" + 0.008*"drink" + 0.008*"don"
+2024-09-27 21:53:06,290 - INFO - topic #2 (0.086): 0.029*"science" + 0.017*"sources" + 0.012*"discussion" + 0.012*"claims" + 0.010*"it" + 0.009*"nutrition" + 0.009*"subreddit" + 0.009*"water" + 0.008*"debate" + 0.008*"hostility"
+2024-09-27 21:53:06,290 - INFO - topic #3 (0.100): 0.015*"it" + 0.015*"food" + 0.013*"mg" + 0.012*"protein" + 0.010*"acid" + 0.010*"vitamin" + 0.009*"whey" + 0.007*"fat" + 0.007*"water" + 0.007*"meat"
+2024-09-27 21:53:06,291 - INFO - topic #4 (0.128): 0.020*"natural" + 0.015*"it" + 0.013*"flavor" + 0.013*"sugar" + 0.013*"food" + 0.011*"protein" + 0.009*"flavors" + 0.009*"like" + 0.008*"ingredients" + 0.008*"water"
+2024-09-27 21:53:06,291 - INFO - topic diff=0.256621, rho=0.500000
+2024-09-27 21:53:06,588 - INFO - -6.726 per-word bound, 105.8 perplexity estimate based on a held-out corpus of 1537 documents with 29822 words
+2024-09-27 21:53:06,588 - INFO - PROGRESS: pass 3, at document #1537/1537
+2024-09-27 21:53:06,816 - INFO - optimized alpha [0.09319071, 0.16331802, 0.07634076, 0.09284222, 0.121558756]
+2024-09-27 21:53:06,817 - INFO - topic #0 (0.093): 0.024*"milk" + 0.018*"sugar" + 0.013*"meat" + 0.013*"don" + 0.011*"it" + 0.009*"ingredients" + 0.008*"almond" + 0.008*"drink" + 0.008*"protein" + 0.008*"energy"
+2024-09-27 21:53:06,817 - INFO - topic #1 (0.163): 0.033*"it" + 0.021*"water" + 0.020*"like" + 0.017*"natural" + 0.014*"you" + 0.010*"ingredients" + 0.009*"flavors" + 0.009*"re" + 0.008*"drink" + 0.008*"don"
+2024-09-27 21:53:06,817 - INFO - topic #2 (0.076): 0.033*"science" + 0.019*"sources" + 0.014*"discussion" + 0.014*"claims" + 0.011*"subreddit" + 0.011*"nutrition" + 0.010*"debate" + 0.009*"hostility" + 0.009*"peer" + 0.009*"reviewed"
+2024-09-27 21:53:06,817 - INFO - topic #3 (0.093): 0.015*"food" + 0.015*"it" + 0.014*"mg" + 0.013*"protein" + 0.011*"vitamin" + 0.011*"acid" + 0.009*"whey" + 0.008*"fat" + 0.007*"meat" + 0.006*"don"
+2024-09-27 21:53:06,817 - INFO - topic #4 (0.122): 0.022*"natural" + 0.016*"it" + 0.015*"flavor" + 0.013*"food" + 0.013*"sugar" + 0.011*"protein" + 0.010*"flavors" + 0.009*"like" + 0.008*"fruit" + 0.008*"ingredients"
+2024-09-27 21:53:06,817 - INFO - topic diff=0.223656, rho=0.447214
+2024-09-27 21:53:07,103 - INFO - -6.691 per-word bound, 103.3 perplexity estimate based on a held-out corpus of 1537 documents with 29822 words
+2024-09-27 21:53:07,103 - INFO - PROGRESS: pass 4, at document #1537/1537
+2024-09-27 21:53:07,317 - INFO - optimized alpha [0.089145795, 0.16304465, 0.06915921, 0.08750491, 0.11745426]
+2024-09-27 21:53:07,318 - INFO - topic #0 (0.089): 0.025*"milk" + 0.018*"sugar" + 0.014*"meat" + 0.013*"don" + 0.011*"it" + 0.010*"ingredients" + 0.009*"protein" + 0.008*"almond" + 0.008*"eat" + 0.008*"processed"
+2024-09-27 21:53:07,318 - INFO - topic #1 (0.163): 0.034*"it" + 0.022*"water" + 0.020*"like" + 0.016*"natural" + 0.015*"you" + 0.009*"re" + 0.009*"ingredients" + 0.009*"flavors" + 0.009*"drink" + 0.008*"that"
+2024-09-27 21:53:07,318 - INFO - topic #2 (0.069): 0.036*"science" + 0.021*"sources" + 0.016*"discussion" + 0.015*"claims" + 0.012*"subreddit" + 0.011*"nutrition" + 0.010*"debate" + 0.010*"hostility" + 0.010*"peer" + 0.010*"reviewed"
+2024-09-27 21:53:07,318 - INFO - topic #3 (0.088): 0.015*"food" + 0.014*"it" + 0.014*"mg" + 0.014*"protein" + 0.012*"vitamin" + 0.011*"acid" + 0.010*"whey" + 0.008*"fat" + 0.007*"meat" + 0.006*"com"
+2024-09-27 21:53:07,318 - INFO - topic #4 (0.117): 0.024*"natural" + 0.016*"flavor" + 0.016*"it" + 0.013*"food" + 0.013*"sugar" + 0.011*"flavors" + 0.011*"protein" + 0.010*"like" + 0.009*"fruit" + 0.008*"artificial"
+2024-09-27 21:53:07,318 - INFO - topic diff=0.196449, rho=0.408248
+2024-09-27 21:53:07,598 - INFO - -6.670 per-word bound, 101.8 perplexity estimate based on a held-out corpus of 1537 documents with 29822 words
+2024-09-27 21:53:07,599 - INFO - PROGRESS: pass 5, at document #1537/1537
+2024-09-27 21:53:07,804 - INFO - optimized alpha [0.0860418, 0.16310026, 0.06360718, 0.083479464, 0.11491896]
+2024-09-27 21:53:07,805 - INFO - topic #0 (0.086): 0.025*"milk" + 0.018*"sugar" + 0.014*"meat" + 0.013*"don" + 0.012*"it" + 0.010*"ingredients" + 0.010*"protein" + 0.008*"processed" + 0.008*"eat" + 0.008*"almond"
+2024-09-27 21:53:07,805 - INFO - topic #1 (0.163): 0.034*"it" + 0.023*"water" + 0.020*"like" + 0.015*"you" + 0.015*"natural" + 0.010*"re" + 0.009*"drink" + 0.009*"ingredients" + 0.008*"that" + 0.008*"don"
+2024-09-27 21:53:07,805 - INFO - topic #2 (0.064): 0.039*"science" + 0.022*"sources" + 0.017*"discussion" + 0.016*"claims" + 0.013*"subreddit" + 0.012*"nutrition" + 0.011*"debate" + 0.011*"reviewed" + 0.011*"hostility" + 0.011*"peer"
+2024-09-27 21:53:07,805 - INFO - topic #3 (0.083): 0.015*"food" + 0.014*"mg" + 0.014*"protein" + 0.013*"it" + 0.013*"vitamin" + 0.012*"acid" + 0.010*"whey" + 0.009*"fat" + 0.007*"meat" + 0.007*"com"
+2024-09-27 21:53:07,805 - INFO - topic #4 (0.115): 0.026*"natural" + 0.017*"flavor" + 0.016*"it" + 0.013*"food" + 0.012*"sugar" + 0.012*"flavors" + 0.011*"protein" + 0.010*"like" + 0.009*"fruit" + 0.008*"artificial"
+2024-09-27 21:53:07,806 - INFO - topic diff=0.172855, rho=0.377964
+2024-09-27 21:53:08,082 - INFO - -6.657 per-word bound, 100.9 perplexity estimate based on a held-out corpus of 1537 documents with 29822 words
+2024-09-27 21:53:08,082 - INFO - PROGRESS: pass 6, at document #1537/1537
+2024-09-27 21:53:08,284 - INFO - optimized alpha [0.08370655, 0.16341476, 0.05923844, 0.0804624, 0.11294613]
+2024-09-27 21:53:08,284 - INFO - topic #0 (0.084): 0.026*"milk" + 0.018*"sugar" + 0.014*"meat" + 0.013*"don" + 0.012*"it" + 0.011*"ingredients" + 0.010*"protein" + 0.009*"processed" + 0.009*"eat" + 0.008*"almond"
+2024-09-27 21:53:08,285 - INFO - topic #1 (0.163): 0.034*"it" + 0.024*"water" + 0.020*"like" + 0.016*"you" + 0.014*"natural" + 0.010*"re" + 0.009*"drink" + 0.009*"that" + 0.009*"don" + 0.008*"ingredients"
+2024-09-27 21:53:08,285 - INFO - topic #2 (0.059): 0.041*"science" + 0.023*"sources" + 0.018*"discussion" + 0.017*"claims" + 0.014*"subreddit" + 0.013*"nutrition" + 0.012*"debate" + 0.011*"reviewed" + 0.011*"hostility" + 0.011*"peer"
+2024-09-27 21:53:08,285 - INFO - topic #3 (0.080): 0.015*"food" + 0.014*"protein" + 0.014*"mg" + 0.014*"vitamin" + 0.013*"it" + 0.012*"acid" + 0.010*"whey" + 0.009*"fat" + 0.008*"meat" + 0.007*"com"
+2024-09-27 21:53:08,285 - INFO - topic #4 (0.113): 0.027*"natural" + 0.018*"flavor" + 0.016*"it" + 0.013*"food" + 0.013*"flavors" + 0.012*"sugar" + 0.010*"protein" + 0.010*"like" + 0.009*"fruit" + 0.009*"artificial"
+2024-09-27 21:53:08,285 - INFO - topic diff=0.152654, rho=0.353553
+2024-09-27 21:53:08,558 - INFO - -6.646 per-word bound, 100.2 perplexity estimate based on a held-out corpus of 1537 documents with 29822 words
+2024-09-27 21:53:08,558 - INFO - PROGRESS: pass 7, at document #1537/1537
+2024-09-27 21:53:08,754 - INFO - optimized alpha [0.08191042, 0.1638676, 0.055629056, 0.07798249, 0.111285746]
+2024-09-27 21:53:08,755 - INFO - topic #0 (0.082): 0.026*"milk" + 0.018*"sugar" + 0.014*"meat" + 0.014*"don" + 0.012*"it" + 0.011*"protein" + 0.011*"ingredients" + 0.009*"processed" + 0.009*"eat" + 0.008*"almond"
+2024-09-27 21:53:08,755 - INFO - topic #1 (0.164): 0.035*"it" + 0.024*"water" + 0.020*"like" + 0.016*"you" + 0.013*"natural" + 0.010*"re" + 0.009*"drink" + 0.009*"that" + 0.009*"don" + 0.008*"good"
+2024-09-27 21:53:08,755 - INFO - topic #2 (0.056): 0.042*"science" + 0.024*"sources" + 0.019*"discussion" + 0.018*"claims" + 0.015*"subreddit" + 0.013*"nutrition" + 0.012*"debate" + 0.012*"reviewed" + 0.012*"hostility" + 0.012*"peer"
+2024-09-27 21:53:08,755 - INFO - topic #3 (0.078): 0.015*"protein" + 0.014*"vitamin" + 0.014*"mg" + 0.014*"food" + 0.012*"acid" + 0.012*"it" + 0.010*"whey" + 0.009*"fat" + 0.008*"meat" + 0.007*"sodium"
+2024-09-27 21:53:08,755 - INFO - topic #4 (0.111): 0.029*"natural" + 0.018*"flavor" + 0.015*"it" + 0.014*"food" + 0.013*"flavors" + 0.012*"sugar" + 0.010*"protein" + 0.010*"like" + 0.010*"fruit" + 0.009*"artificial"
+2024-09-27 21:53:08,755 - INFO - topic diff=0.135058, rho=0.333333
+2024-09-27 21:53:09,026 - INFO - -6.639 per-word bound, 99.6 perplexity estimate based on a held-out corpus of 1537 documents with 29822 words
+2024-09-27 21:53:09,026 - INFO - PROGRESS: pass 8, at document #1537/1537
+2024-09-27 21:53:09,219 - INFO - optimized alpha [0.0805435, 0.16452728, 0.05262918, 0.07581508, 0.110125296]
+2024-09-27 21:53:09,219 - INFO - topic #0 (0.081): 0.026*"milk" + 0.018*"sugar" + 0.014*"meat" + 0.014*"don" + 0.013*"it" + 0.012*"protein" + 0.011*"ingredients" + 0.009*"processed" + 0.009*"eat" + 0.008*"almond"
+2024-09-27 21:53:09,219 - INFO - topic #1 (0.165): 0.035*"it" + 0.025*"water" + 0.020*"like" + 0.016*"you" + 0.013*"natural" + 0.010*"re" + 0.010*"drink" + 0.009*"that" + 0.009*"don" + 0.008*"good"
+2024-09-27 21:53:09,219 - INFO - topic #2 (0.053): 0.044*"science" + 0.025*"sources" + 0.020*"discussion" + 0.019*"claims" + 0.015*"subreddit" + 0.013*"nutrition" + 0.013*"debate" + 0.012*"reviewed" + 0.012*"hostility" + 0.012*"peer"
+2024-09-27 21:53:09,220 - INFO - topic #3 (0.076): 0.015*"vitamin" + 0.015*"protein" + 0.015*"mg" + 0.014*"food" + 0.013*"acid" + 0.012*"it" + 0.010*"whey" + 0.009*"fat" + 0.008*"meat" + 0.007*"sodium"
+2024-09-27 21:53:09,220 - INFO - topic #4 (0.110): 0.030*"natural" + 0.019*"flavor" + 0.015*"it" + 0.014*"flavors" + 0.014*"food" + 0.012*"sugar" + 0.010*"like" + 0.010*"fruit" + 0.010*"protein" + 0.009*"https"
+2024-09-27 21:53:09,220 - INFO - topic diff=0.118736, rho=0.316228
+2024-09-27 21:53:09,484 - INFO - -6.632 per-word bound, 99.2 perplexity estimate based on a held-out corpus of 1537 documents with 29822 words
+2024-09-27 21:53:09,484 - INFO - PROGRESS: pass 9, at document #1537/1537
+2024-09-27 21:53:09,673 - INFO - optimized alpha [0.07936314, 0.16505697, 0.050060973, 0.07408489, 0.10927055]
+2024-09-27 21:53:09,674 - INFO - topic #0 (0.079): 0.026*"milk" + 0.018*"sugar" + 0.014*"meat" + 0.014*"don" + 0.013*"it" + 0.013*"protein" + 0.011*"ingredients" + 0.009*"processed" + 0.009*"eat" + 0.008*"almond"
+2024-09-27 21:53:09,674 - INFO - topic #1 (0.165): 0.035*"it" + 0.025*"water" + 0.020*"like" + 0.016*"you" + 0.012*"natural" + 0.010*"re" + 0.010*"drink" + 0.009*"that" + 0.009*"don" + 0.009*"good"
+2024-09-27 21:53:09,674 - INFO - topic #2 (0.050): 0.045*"science" + 0.026*"sources" + 0.020*"discussion" + 0.019*"claims" + 0.015*"subreddit" + 0.014*"nutrition" + 0.013*"debate" + 0.012*"reviewed" + 0.012*"hostility" + 0.012*"peer"
+2024-09-27 21:53:09,674 - INFO - topic #3 (0.074): 0.015*"vitamin" + 0.015*"protein" + 0.015*"mg" + 0.014*"food" + 0.013*"acid" + 0.011*"it" + 0.011*"whey" + 0.009*"fat" + 0.008*"meat" + 0.007*"sodium"
+2024-09-27 21:53:09,674 - INFO - topic #4 (0.109): 0.031*"natural" + 0.020*"flavor" + 0.015*"it" + 0.015*"flavors" + 0.014*"food" + 0.012*"sugar" + 0.010*"fruit" + 0.010*"like" + 0.010*"protein" + 0.009*"https"
+2024-09-27 21:53:09,675 - INFO - topic diff=0.104443, rho=0.301511
+2024-09-27 21:53:09,675 - INFO - LdaModel lifecycle event {'msg': 'trained LdaModel(num_terms=1422, num_topics=5, decay=0.5, chunksize=2000) in 5.59s', 'datetime': '2024-09-27T21:53:09.675062', 'gensim': '4.1.2', 'python': '3.9.19 (main, May  6 2024, 20:12:36) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.19045-SP0', 'event': 'created'}
+2024-09-27 21:53:09,675 - INFO - LDA model built successfully.
+2024-09-27 21:53:09,675 - INFO - Topic modeling took 5.68 seconds.
+2024-09-27 21:53:09,933 - INFO - Total time for processing phrase 'natural flavoring' was 33.86 seconds.
+2024-09-27 21:53:09,934 - INFO - Processing phrase: aroma
+2024-09-27 21:53:27,594 - INFO - Data retrieval for phrase 'aroma' took 17.66 seconds.
+2024-09-27 21:53:27,613 - INFO - Preprocessing for topic modeling took 0.02 seconds.
+2024-09-27 21:53:27,613 - INFO - adding document #0 to Dictionary(0 unique tokens: [])
+2024-09-27 21:53:27,619 - INFO - built Dictionary(3336 unique tokens: ['ate', 'chicken', 'lasagna', 'sandwich', 'veg']...) from 379 documents (total 9688 corpus positions)
+2024-09-27 21:53:27,619 - INFO - Dictionary lifecycle event {'msg': "built Dictionary(3336 unique tokens: ['ate', 'chicken', 'lasagna', 'sandwich', 'veg']...) from 379 documents (total 9688 corpus positions)", 'datetime': '2024-09-27T21:53:27.619763', 'gensim': '4.1.2', 'python': '3.9.19 (main, May  6 2024, 20:12:36) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.19045-SP0', 'event': 'created'}
+2024-09-27 21:53:27,621 - INFO - discarding 2991 tokens: [('lasagna', 1), ('veg', 1), ('crispy', 2), ('eggs', 3), ('made', 1), ('marinated', 4), ('mushrooms', 2), ('self', 4), ('shiitake', 2), ('shoyu', 3)]...
+2024-09-27 21:53:27,621 - INFO - keeping 345 tokens which were in no less than 5 and no more than 189 (=50.0%) documents
+2024-09-27 21:53:27,622 - INFO - resulting dictionary: Dictionary(345 unique tokens: ['ate', 'chicken', 'sandwich', 'aroma', 'broth']...)
+2024-09-27 21:53:27,626 - INFO - using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+2024-09-27 21:53:27,626 - INFO - using serial LDA version on this node
+2024-09-27 21:53:27,626 - INFO - running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 379 documents, updating model once every 379 documents, evaluating perplexity every 379 documents, iterating 100x with a convergence threshold of 0.001000
+2024-09-27 21:53:27,727 - INFO - -6.797 per-word bound, 111.2 perplexity estimate based on a held-out corpus of 379 documents with 4438 words
+2024-09-27 21:53:27,727 - INFO - PROGRESS: pass 0, at document #379/379
+2024-09-27 21:53:27,811 - INFO - optimized alpha [0.16956466, 0.13496202, 0.14427218, 0.15232022, 0.15320405]
+2024-09-27 21:53:27,811 - INFO - topic #0 (0.170): 0.022*"food" + 0.020*"like" + 0.019*"soup" + 0.019*"it" + 0.018*"mango" + 0.017*"com" + 0.017*"http" + 0.013*"www" + 0.012*"you" + 0.011*"ve"
+2024-09-27 21:53:27,811 - INFO - topic #1 (0.135): 0.035*"pho" + 0.026*"food" + 0.021*"looks" + 0.019*"amazing" + 0.015*"you" + 0.014*"https" + 0.014*"link" + 0.013*"oil" + 0.012*"recipe" + 0.012*"tea"
+2024-09-27 21:53:27,811 - INFO - topic #2 (0.144): 0.020*"science" + 0.020*"pho" + 0.018*"soup" + 0.015*"good" + 0.013*"chicken" + 0.012*"dish" + 0.012*"one" + 0.012*"like" + 0.012*"time" + 0.011*"taste"
+2024-09-27 21:53:27,811 - INFO - topic #3 (0.152): 0.052*"it" + 0.030*"like" + 0.016*"chicken" + 0.015*"good" + 0.014*"delicious" + 0.013*"oil" + 0.010*"ll" + 0.010*"that" + 0.010*"eat" + 0.010*"food"
+2024-09-27 21:53:27,812 - INFO - topic #4 (0.153): 0.022*"like" + 0.022*"food" + 0.020*"it" + 0.019*"aroma" + 0.016*"taste" + 0.015*"flavor" + 0.014*"oil" + 0.014*"don" + 0.014*"pho" + 0.012*"com"
+2024-09-27 21:53:27,812 - INFO - topic diff=1.519514, rho=1.000000
+2024-09-27 21:53:27,874 - INFO - -5.930 per-word bound, 61.0 perplexity estimate based on a held-out corpus of 379 documents with 4438 words
+2024-09-27 21:53:27,874 - INFO - PROGRESS: pass 1, at document #379/379
+2024-09-27 21:53:27,922 - INFO - optimized alpha [0.1541006, 0.11678718, 0.12640338, 0.13501906, 0.13975117]
+2024-09-27 21:53:27,922 - INFO - topic #0 (0.154): 0.021*"soup" + 0.021*"like" + 0.020*"com" + 0.020*"food" + 0.020*"mango" + 0.019*"http" + 0.018*"it" + 0.016*"www" + 0.012*"you" + 0.012*"recipes"
+2024-09-27 21:53:27,923 - INFO - topic #1 (0.117): 0.037*"food" + 0.036*"pho" + 0.025*"https" + 0.019*"looks" + 0.018*"amazing" + 0.016*"you" + 0.015*"link" + 0.014*"reddit" + 0.014*"www" + 0.013*"homemade"
+2024-09-27 21:53:27,923 - INFO - topic #2 (0.126): 0.023*"pho" + 0.022*"science" + 0.018*"soup" + 0.015*"good" + 0.014*"dish" + 0.013*"time" + 0.013*"chicken" + 0.013*"one" + 0.012*"like" + 0.011*"minutes"
+2024-09-27 21:53:27,923 - INFO - topic #3 (0.135): 0.055*"it" + 0.028*"like" + 0.018*"chicken" + 0.016*"delicious" + 0.015*"good" + 0.012*"oil" + 0.011*"ll" + 0.011*"garlic" + 0.010*"oven" + 0.010*"that"
+2024-09-27 21:53:27,923 - INFO - topic #4 (0.140): 0.023*"like" + 0.022*"aroma" + 0.021*"food" + 0.019*"it" + 0.018*"taste" + 0.017*"flavor" + 0.016*"oil" + 0.015*"don" + 0.014*"smell" + 0.012*"know"
+2024-09-27 21:53:27,923 - INFO - topic diff=0.286807, rho=0.577350
+2024-09-27 21:53:27,979 - INFO - -5.841 per-word bound, 57.3 perplexity estimate based on a held-out corpus of 379 documents with 4438 words
+2024-09-27 21:53:27,980 - INFO - PROGRESS: pass 2, at document #379/379
+2024-09-27 21:53:28,021 - INFO - optimized alpha [0.14302966, 0.105103694, 0.11453798, 0.122825846, 0.13015515]
+2024-09-27 21:53:28,021 - INFO - topic #0 (0.143): 0.022*"soup" + 0.021*"like" + 0.021*"mango" + 0.020*"http" + 0.020*"com" + 0.019*"it" + 0.018*"food" + 0.016*"www" + 0.012*"recipes" + 0.012*"you"
+2024-09-27 21:53:28,021 - INFO - topic #1 (0.105): 0.042*"food" + 0.037*"pho" + 0.029*"https" + 0.018*"www" + 0.018*"amazing" + 0.018*"looks" + 0.017*"com" + 0.017*"you" + 0.016*"reddit" + 0.016*"comments"
+2024-09-27 21:53:28,022 - INFO - topic #2 (0.115): 0.024*"pho" + 0.023*"science" + 0.019*"soup" + 0.015*"dish" + 0.015*"good" + 0.015*"time" + 0.013*"one" + 0.013*"chicken" + 0.012*"like" + 0.012*"onion"
+2024-09-27 21:53:28,022 - INFO - topic #3 (0.123): 0.056*"it" + 0.028*"like" + 0.018*"chicken" + 0.017*"delicious" + 0.016*"good" + 0.012*"garlic" + 0.012*"ll" + 0.011*"oven" + 0.011*"cold" + 0.011*"that"
+2024-09-27 21:53:28,022 - INFO - topic #4 (0.130): 0.023*"aroma" + 0.023*"like" + 0.020*"food" + 0.019*"taste" + 0.018*"oil" + 0.018*"flavor" + 0.017*"it" + 0.016*"don" + 0.015*"smell" + 0.014*"coconut"
+2024-09-27 21:53:28,022 - INFO - topic diff=0.219276, rho=0.500000
+2024-09-27 21:53:28,077 - INFO - -5.801 per-word bound, 55.8 perplexity estimate based on a held-out corpus of 379 documents with 4438 words
+2024-09-27 21:53:28,077 - INFO - PROGRESS: pass 3, at document #379/379
+2024-09-27 21:53:28,117 - INFO - optimized alpha [0.13443285, 0.095922604, 0.106159076, 0.114272445, 0.12326104]
+2024-09-27 21:53:28,118 - INFO - topic #0 (0.134): 0.023*"soup" + 0.022*"mango" + 0.021*"http" + 0.021*"like" + 0.020*"com" + 0.019*"it" + 0.017*"food" + 0.016*"www" + 0.012*"recipes" + 0.012*"recipe"
+2024-09-27 21:53:28,118 - INFO - topic #1 (0.096): 0.046*"food" + 0.038*"pho" + 0.031*"https" + 0.022*"www" + 0.021*"com" + 0.019*"amazing" + 0.019*"comments" + 0.018*"reddit" + 0.018*"looks" + 0.018*"subreddit"
+2024-09-27 21:53:28,118 - INFO - topic #2 (0.106): 0.025*"pho" + 0.023*"science" + 0.020*"soup" + 0.016*"dish" + 0.016*"time" + 0.015*"good" + 0.014*"one" + 0.013*"onion" + 0.013*"chicken" + 0.013*"like"
+2024-09-27 21:53:28,118 - INFO - topic #3 (0.114): 0.056*"it" + 0.028*"like" + 0.019*"chicken" + 0.018*"delicious" + 0.016*"good" + 0.013*"garlic" + 0.012*"ll" + 0.012*"cold" + 0.012*"oven" + 0.011*"that"
+2024-09-27 21:53:28,118 - INFO - topic #4 (0.123): 0.024*"aroma" + 0.023*"like" + 0.019*"taste" + 0.019*"food" + 0.019*"oil" + 0.018*"flavor" + 0.016*"it" + 0.016*"don" + 0.015*"smell" + 0.015*"coconut"
+2024-09-27 21:53:28,118 - INFO - topic diff=0.174882, rho=0.447214
+2024-09-27 21:53:28,174 - INFO - -5.779 per-word bound, 54.9 perplexity estimate based on a held-out corpus of 379 documents with 4438 words
+2024-09-27 21:53:28,174 - INFO - PROGRESS: pass 4, at document #379/379
+2024-09-27 21:53:28,214 - INFO - optimized alpha [0.12739444, 0.08884544, 0.099456616, 0.10813037, 0.118070506]
+2024-09-27 21:53:28,214 - INFO - topic #0 (0.127): 0.024*"soup" + 0.022*"mango" + 0.022*"http" + 0.021*"like" + 0.020*"com" + 0.019*"it" + 0.016*"food" + 0.016*"www" + 0.012*"recipes" + 0.012*"recipe"
+2024-09-27 21:53:28,214 - INFO - topic #1 (0.089): 0.048*"food" + 0.037*"pho" + 0.032*"https" + 0.025*"www" + 0.023*"com" + 0.020*"comments" + 0.020*"reddit" + 0.020*"subreddit" + 0.019*"here" + 0.019*"amazing"
+2024-09-27 21:53:28,214 - INFO - topic #2 (0.099): 0.026*"pho" + 0.024*"science" + 0.020*"soup" + 0.016*"time" + 0.016*"dish" + 0.014*"good" + 0.014*"onion" + 0.014*"one" + 0.014*"chicken" + 0.013*"like"
+2024-09-27 21:53:28,214 - INFO - topic #3 (0.108): 0.055*"it" + 0.027*"like" + 0.019*"delicious" + 0.018*"chicken" + 0.016*"good" + 0.013*"garlic" + 0.013*"ll" + 0.012*"cold" + 0.012*"oven" + 0.011*"that"
+2024-09-27 21:53:28,215 - INFO - topic #4 (0.118): 0.024*"aroma" + 0.023*"like" + 0.020*"taste" + 0.019*"oil" + 0.019*"food" + 0.018*"flavor" + 0.016*"it" + 0.016*"smell" + 0.015*"don" + 0.015*"coconut"
+2024-09-27 21:53:28,215 - INFO - topic diff=0.146921, rho=0.408248
+2024-09-27 21:53:28,267 - INFO - -5.765 per-word bound, 54.4 perplexity estimate based on a held-out corpus of 379 documents with 4438 words
+2024-09-27 21:53:28,267 - INFO - PROGRESS: pass 5, at document #379/379
+2024-09-27 21:53:28,305 - INFO - optimized alpha [0.12167607, 0.08293261, 0.094224006, 0.1029669, 0.11402385]
+2024-09-27 21:53:28,305 - INFO - topic #0 (0.122): 0.024*"soup" + 0.023*"mango" + 0.022*"http" + 0.022*"like" + 0.020*"com" + 0.019*"it" + 0.016*"food" + 0.016*"www" + 0.012*"recipes" + 0.012*"recipe"
+2024-09-27 21:53:28,305 - INFO - topic #1 (0.083): 0.050*"food" + 0.036*"pho" + 0.033*"https" + 0.026*"www" + 0.024*"com" + 0.021*"subreddit" + 0.021*"comments" + 0.021*"reddit" + 0.020*"here" + 0.019*"amazing"
+2024-09-27 21:53:28,306 - INFO - topic #2 (0.094): 0.027*"pho" + 0.024*"science" + 0.021*"soup" + 0.017*"time" + 0.016*"dish" + 0.014*"onion" + 0.014*"good" + 0.014*"one" + 0.014*"chicken" + 0.014*"like"
+2024-09-27 21:53:28,306 - INFO - topic #3 (0.103): 0.055*"it" + 0.026*"like" + 0.019*"delicious" + 0.018*"chicken" + 0.016*"good" + 0.013*"ll" + 0.013*"garlic" + 0.013*"oven" + 0.012*"cold" + 0.011*"that"
+2024-09-27 21:53:28,306 - INFO - topic #4 (0.114): 0.024*"aroma" + 0.023*"like" + 0.021*"taste" + 0.020*"oil" + 0.019*"food" + 0.018*"flavor" + 0.016*"don" + 0.015*"smell" + 0.015*"it" + 0.015*"coconut"
+2024-09-27 21:53:28,306 - INFO - topic diff=0.124058, rho=0.377964
+2024-09-27 21:53:28,359 - INFO - -5.754 per-word bound, 54.0 perplexity estimate based on a held-out corpus of 379 documents with 4438 words
+2024-09-27 21:53:28,359 - INFO - PROGRESS: pass 6, at document #379/379
+2024-09-27 21:53:28,396 - INFO - optimized alpha [0.117037795, 0.077960186, 0.08948453, 0.09869377, 0.11055751]
+2024-09-27 21:53:28,396 - INFO - topic #0 (0.117): 0.024*"soup" + 0.023*"mango" + 0.022*"http" + 0.022*"like" + 0.020*"com" + 0.019*"it" + 0.015*"www" + 0.015*"food" + 0.012*"recipes" + 0.012*"recipe"
+2024-09-27 21:53:28,396 - INFO - topic #1 (0.078): 0.051*"food" + 0.035*"pho" + 0.034*"https" + 0.028*"www" + 0.026*"com" + 0.022*"subreddit" + 0.022*"comments" + 0.022*"reddit" + 0.021*"here" + 0.020*"performed"
+2024-09-27 21:53:28,397 - INFO - topic #2 (0.089): 0.028*"pho" + 0.024*"science" + 0.022*"soup" + 0.017*"time" + 0.017*"dish" + 0.015*"onion" + 0.014*"chicken" + 0.014*"good" + 0.014*"one" + 0.014*"like"
+2024-09-27 21:53:28,397 - INFO - topic #3 (0.099): 0.055*"it" + 0.026*"like" + 0.019*"delicious" + 0.018*"chicken" + 0.016*"good" + 0.013*"ll" + 0.013*"garlic" + 0.013*"oven" + 0.013*"cold" + 0.011*"time"
+2024-09-27 21:53:28,397 - INFO - topic #4 (0.111): 0.024*"aroma" + 0.023*"like" + 0.021*"taste" + 0.020*"oil" + 0.019*"food" + 0.018*"flavor" + 0.016*"don" + 0.015*"smell" + 0.015*"it" + 0.015*"coconut"
+2024-09-27 21:53:28,397 - INFO - topic diff=0.104916, rho=0.353553
+2024-09-27 21:53:28,449 - INFO - -5.746 per-word bound, 53.7 perplexity estimate based on a held-out corpus of 379 documents with 4438 words
+2024-09-27 21:53:28,449 - INFO - PROGRESS: pass 7, at document #379/379
+2024-09-27 21:53:28,487 - INFO - optimized alpha [0.11314896, 0.07390817, 0.0855917, 0.094814755, 0.107689634]
+2024-09-27 21:53:28,487 - INFO - topic #0 (0.113): 0.025*"soup" + 0.024*"mango" + 0.022*"http" + 0.022*"like" + 0.020*"com" + 0.019*"it" + 0.015*"www" + 0.015*"food" + 0.012*"recipes" + 0.012*"recipe"
+2024-09-27 21:53:28,487 - INFO - topic #1 (0.074): 0.052*"food" + 0.035*"https" + 0.034*"pho" + 0.029*"www" + 0.027*"com" + 0.023*"subreddit" + 0.022*"comments" + 0.022*"reddit" + 0.021*"here" + 0.020*"performed"
+2024-09-27 21:53:28,487 - INFO - topic #2 (0.086): 0.029*"pho" + 0.024*"science" + 0.023*"soup" + 0.017*"time" + 0.017*"dish" + 0.015*"onion" + 0.015*"chicken" + 0.014*"good" + 0.014*"it" + 0.014*"one"
+2024-09-27 21:53:28,487 - INFO - topic #3 (0.095): 0.054*"it" + 0.026*"like" + 0.019*"delicious" + 0.018*"chicken" + 0.016*"good" + 0.014*"ll" + 0.013*"garlic" + 0.013*"oven" + 0.013*"cold" + 0.012*"time"
+2024-09-27 21:53:28,487 - INFO - topic #4 (0.108): 0.024*"aroma" + 0.023*"like" + 0.021*"taste" + 0.020*"oil" + 0.019*"food" + 0.018*"flavor" + 0.016*"don" + 0.015*"smell" + 0.015*"it" + 0.015*"coconut"
+2024-09-27 21:53:28,487 - INFO - topic diff=0.089823, rho=0.333333
+2024-09-27 21:53:28,538 - INFO - -5.742 per-word bound, 53.5 perplexity estimate based on a held-out corpus of 379 documents with 4438 words
+2024-09-27 21:53:28,538 - INFO - PROGRESS: pass 8, at document #379/379
+2024-09-27 21:53:28,574 - INFO - optimized alpha [0.10973003, 0.07042388, 0.08255549, 0.09164104, 0.10510671]
+2024-09-27 21:53:28,574 - INFO - topic #0 (0.110): 0.025*"soup" + 0.024*"mango" + 0.022*"http" + 0.022*"like" + 0.020*"com" + 0.020*"it" + 0.015*"www" + 0.015*"food" + 0.013*"try" + 0.013*"recipes"
+2024-09-27 21:53:28,574 - INFO - topic #1 (0.070): 0.052*"food" + 0.035*"https" + 0.033*"pho" + 0.030*"www" + 0.027*"com" + 0.023*"subreddit" + 0.022*"comments" + 0.022*"reddit" + 0.022*"here" + 0.020*"performed"
+2024-09-27 21:53:28,574 - INFO - topic #2 (0.083): 0.030*"pho" + 0.024*"soup" + 0.024*"science" + 0.017*"time" + 0.017*"dish" + 0.015*"onion" + 0.015*"chicken" + 0.015*"it" + 0.015*"good" + 0.014*"caldo"
+2024-09-27 21:53:28,574 - INFO - topic #3 (0.092): 0.054*"it" + 0.025*"like" + 0.020*"delicious" + 0.018*"chicken" + 0.016*"good" + 0.014*"ll" + 0.014*"oven" + 0.014*"garlic" + 0.013*"cold" + 0.012*"time"
+2024-09-27 21:53:28,574 - INFO - topic #4 (0.105): 0.024*"aroma" + 0.023*"like" + 0.021*"taste" + 0.020*"oil" + 0.019*"food" + 0.018*"flavor" + 0.016*"don" + 0.015*"smell" + 0.015*"it" + 0.015*"coconut"
+2024-09-27 21:53:28,574 - INFO - topic diff=0.076115, rho=0.316228
+2024-09-27 21:53:28,624 - INFO - -5.737 per-word bound, 53.4 perplexity estimate based on a held-out corpus of 379 documents with 4438 words
+2024-09-27 21:53:28,624 - INFO - PROGRESS: pass 9, at document #379/379
+2024-09-27 21:53:28,659 - INFO - optimized alpha [0.106577754, 0.06760319, 0.07976386, 0.0889212, 0.10274168]
+2024-09-27 21:53:28,659 - INFO - topic #0 (0.107): 0.025*"soup" + 0.024*"mango" + 0.023*"http" + 0.022*"like" + 0.020*"com" + 0.020*"it" + 0.015*"www" + 0.014*"food" + 0.013*"try" + 0.013*"recipes"
+2024-09-27 21:53:28,659 - INFO - topic #1 (0.068): 0.052*"food" + 0.036*"https" + 0.032*"pho" + 0.031*"www" + 0.028*"com" + 0.023*"subreddit" + 0.022*"comments" + 0.022*"reddit" + 0.022*"here" + 0.020*"performed"
+2024-09-27 21:53:28,659 - INFO - topic #2 (0.080): 0.031*"pho" + 0.026*"soup" + 0.024*"science" + 0.017*"dish" + 0.017*"time" + 0.015*"onion" + 0.015*"chicken" + 0.015*"it" + 0.015*"good" + 0.014*"caldo"
+2024-09-27 21:53:28,659 - INFO - topic #3 (0.089): 0.054*"it" + 0.025*"like" + 0.020*"delicious" + 0.018*"chicken" + 0.017*"good" + 0.014*"ll" + 0.014*"oven" + 0.014*"garlic" + 0.013*"cold" + 0.012*"time"
+2024-09-27 21:53:28,659 - INFO - topic #4 (0.103): 0.024*"aroma" + 0.023*"like" + 0.021*"taste" + 0.021*"oil" + 0.019*"food" + 0.018*"flavor" + 0.016*"don" + 0.015*"smell" + 0.015*"it" + 0.015*"coconut"
+2024-09-27 21:53:28,659 - INFO - topic diff=0.065506, rho=0.301511
+2024-09-27 21:53:28,660 - INFO - LdaModel lifecycle event {'msg': 'trained LdaModel(num_terms=345, num_topics=5, decay=0.5, chunksize=2000) in 1.03s', 'datetime': '2024-09-27T21:53:28.660355', 'gensim': '4.1.2', 'python': '3.9.19 (main, May  6 2024, 20:12:36) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.19045-SP0', 'event': 'created'}
+2024-09-27 21:53:28,660 - INFO - LDA model built successfully.
+2024-09-27 21:53:28,660 - INFO - Topic modeling took 1.05 seconds.
+2024-09-27 21:53:28,713 - INFO - Total time for processing phrase 'aroma' was 18.78 seconds.
+2024-09-27 21:53:28,713 - INFO - Processing phrase: polyphenols
+2024-09-27 21:53:54,198 - INFO - Data retrieval for phrase 'polyphenols' took 25.48 seconds.
+2024-09-27 21:53:54,274 - INFO - Preprocessing for topic modeling took 0.08 seconds.
+2024-09-27 21:53:54,274 - INFO - adding document #0 to Dictionary(0 unique tokens: [])
+2024-09-27 21:53:54,297 - INFO - built Dictionary(6354 unique tokens: ['absorbed', 'amounts', 'and', 'anti', 'article']...) from 1234 documents (total 36922 corpus positions)
+2024-09-27 21:53:54,298 - INFO - Dictionary lifecycle event {'msg': "built Dictionary(6354 unique tokens: ['absorbed', 'amounts', 'and', 'anti', 'article']...) from 1234 documents (total 36922 corpus positions)", 'datetime': '2024-09-27T21:53:54.298715', 'gensim': '4.1.2', 'python': '3.9.19 (main, May  6 2024, 20:12:36) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.19045-SP0', 'event': 'created'}
+2024-09-27 21:53:54,301 - INFO - discarding 5040 tokens: [('authority', 3), ('considerably', 1), ('cutting', 4), ('efsa', 2), ('efsajournal', 1), ('eu', 3), ('europa', 1), ('extent', 4), ('fermenting', 3), ('glucosinolates', 2)]...
+2024-09-27 21:53:54,301 - INFO - keeping 1314 tokens which were in no less than 5 and no more than 617 (=50.0%) documents
+2024-09-27 21:53:54,302 - INFO - resulting dictionary: Dictionary(1314 unique tokens: ['absorbed', 'amounts', 'and', 'anti', 'article']...)
+2024-09-27 21:53:54,314 - INFO - using autotuned alpha, starting with [0.2, 0.2, 0.2, 0.2, 0.2]
+2024-09-27 21:53:54,314 - INFO - using serial LDA version on this node
+2024-09-27 21:53:54,314 - INFO - running online (multi-pass) LDA training, 5 topics, 10 passes over the supplied corpus of 1234 documents, updating model once every 1234 documents, evaluating perplexity every 1234 documents, iterating 100x with a convergence threshold of 0.001000
+2024-09-27 21:53:54,754 - INFO - -7.946 per-word bound, 246.6 perplexity estimate based on a held-out corpus of 1234 documents with 27705 words
+2024-09-27 21:53:54,754 - INFO - PROGRESS: pass 0, at document #1234/1234
+2024-09-27 21:53:55,127 - INFO - optimized alpha [0.1522195, 0.14286242, 0.12719157, 0.11784643, 0.15921062]
+2024-09-27 21:53:55,128 - INFO - topic #0 (0.152): 0.023*"science" + 0.013*"sources" + 0.011*"nutrition" + 0.010*"oil" + 0.010*"people" + 0.009*"discussion" + 0.009*"claims" + 0.007*"food" + 0.007*"https" + 0.007*"subreddit"
+2024-09-27 21:53:55,128 - INFO - topic #1 (0.143): 0.014*"oil" + 0.009*"diet" + 0.009*"it" + 0.009*"people" + 0.008*"foods" + 0.008*"good" + 0.008*"canola" + 0.008*"eat" + 0.008*"calories" + 0.008*"health"
+2024-09-27 21:53:55,128 - INFO - topic #2 (0.127): 0.014*"it" + 0.013*"oil" + 0.011*"diet" + 0.010*"like" + 0.010*"food" + 0.009*"you" + 0.008*"don" + 0.008*"polyphenols" + 0.008*"good" + 0.007*"think"
+2024-09-27 21:53:55,128 - INFO - topic #3 (0.118): 0.012*"it" + 0.009*"polyphenols" + 0.009*"eat" + 0.008*"eating" + 0.008*"foods" + 0.007*"like" + 0.007*"www" + 0.007*"https" + 0.007*"iron" + 0.006*"study"
+2024-09-27 21:53:55,128 - INFO - topic #4 (0.159): 0.017*"it" + 0.016*"fat" + 0.009*"food" + 0.009*"eat" + 0.009*"don" + 0.009*"calories" + 0.009*"foods" + 0.008*"tea" + 0.007*"body" + 0.007*"polyphenols"
+2024-09-27 21:53:55,128 - INFO - topic diff=1.562377, rho=1.000000
+2024-09-27 21:53:55,410 - INFO - -6.804 per-word bound, 111.7 perplexity estimate based on a held-out corpus of 1234 documents with 27705 words
+2024-09-27 21:53:55,410 - INFO - PROGRESS: pass 1, at document #1234/1234
+2024-09-27 21:53:55,627 - INFO - optimized alpha [0.122173466, 0.12625518, 0.11405577, 0.10263267, 0.14952298]
+2024-09-27 21:53:55,628 - INFO - topic #0 (0.122): 0.030*"science" + 0.017*"sources" + 0.013*"nutrition" + 0.012*"discussion" + 0.012*"claims" + 0.010*"oil" + 0.009*"people" + 0.009*"subreddit" + 0.009*"peer" + 0.008*"reviewed"
+2024-09-27 21:53:55,628 - INFO - topic #1 (0.126): 0.018*"oil" + 0.010*"people" + 0.009*"diet" + 0.009*"canola" + 0.008*"it" + 0.008*"health" + 0.008*"foods" + 0.008*"good" + 0.007*"eat" + 0.007*"calories"
+2024-09-27 21:53:55,628 - INFO - topic #2 (0.114): 0.016*"it" + 0.013*"like" + 0.012*"diet" + 0.012*"oil" + 0.010*"food" + 0.010*"you" + 0.009*"good" + 0.008*"don" + 0.008*"think" + 0.008*"polyphenols"
+2024-09-27 21:53:55,628 - INFO - topic #3 (0.103): 0.011*"it" + 0.011*"eat" + 0.010*"www" + 0.010*"https" + 0.009*"pmc" + 0.009*"polyphenols" + 0.008*"iron" + 0.008*"eating" + 0.008*"gov" + 0.008*"study"
+2024-09-27 21:53:55,628 - INFO - topic #4 (0.150): 0.016*"fat" + 0.016*"it" + 0.010*"calories" + 0.009*"food" + 0.009*"eat" + 0.009*"foods" + 0.009*"don" + 0.008*"tea" + 0.008*"body" + 0.007*"diet"
+2024-09-27 21:53:55,628 - INFO - topic diff=0.313011, rho=0.577350
+2024-09-27 21:53:55,883 - INFO - -6.711 per-word bound, 104.7 perplexity estimate based on a held-out corpus of 1234 documents with 27705 words
+2024-09-27 21:53:55,883 - INFO - PROGRESS: pass 2, at document #1234/1234
+2024-09-27 21:53:56,074 - INFO - optimized alpha [0.103080824, 0.11607496, 0.107132435, 0.09346686, 0.14300172]
+2024-09-27 21:53:56,075 - INFO - topic #0 (0.103): 0.036*"science" + 0.020*"sources" + 0.015*"discussion" + 0.015*"nutrition" + 0.015*"claims" + 0.011*"subreddit" + 0.011*"peer" + 0.010*"reviewed" + 0.009*"debate" + 0.009*"hostility"
+2024-09-27 21:53:56,075 - INFO - topic #1 (0.116): 0.021*"oil" + 0.010*"people" + 0.009*"canola" + 0.009*"diet" + 0.009*"oils" + 0.009*"health" + 0.008*"it" + 0.008*"foods" + 0.007*"good" + 0.007*"omega"
+2024-09-27 21:53:56,075 - INFO - topic #2 (0.107): 0.017*"it" + 0.014*"like" + 0.013*"diet" + 0.010*"oil" + 0.010*"food" + 0.010*"you" + 0.009*"think" + 0.009*"good" + 0.008*"don" + 0.007*"polyphenols"
+2024-09-27 21:53:56,075 - INFO - topic #3 (0.093): 0.012*"www" + 0.012*"https" + 0.012*"pmc" + 0.011*"eat" + 0.011*"it" + 0.010*"gov" + 0.010*"iron" + 0.009*"polyphenols" + 0.009*"ncbi" + 0.009*"nlm"
+2024-09-27 21:53:56,075 - INFO - topic #4 (0.143): 0.016*"fat" + 0.015*"it" + 0.010*"calories" + 0.010*"food" + 0.009*"eat" + 0.009*"foods" + 0.009*"don" + 0.008*"body" + 0.008*"tea" + 0.008*"diet"
+2024-09-27 21:53:56,075 - INFO - topic diff=0.262144, rho=0.500000
+2024-09-27 21:53:56,320 - INFO - -6.653 per-word bound, 100.7 perplexity estimate based on a held-out corpus of 1234 documents with 27705 words
+2024-09-27 21:53:56,320 - INFO - PROGRESS: pass 3, at document #1234/1234
+2024-09-27 21:53:56,500 - INFO - optimized alpha [0.09036508, 0.10934429, 0.10366155, 0.08729408, 0.13843039]
+2024-09-27 21:53:56,501 - INFO - topic #0 (0.090): 0.042*"science" + 0.023*"sources" + 0.017*"discussion" + 0.017*"claims" + 0.016*"nutrition" + 0.012*"subreddit" + 0.012*"peer" + 0.012*"reviewed" + 0.011*"debate" + 0.010*"hostility"
+2024-09-27 21:53:56,501 - INFO - topic #1 (0.109): 0.024*"oil" + 0.011*"oils" + 0.010*"people" + 0.010*"canola" + 0.009*"health" + 0.009*"diet" + 0.008*"olive" + 0.008*"omega" + 0.007*"it" + 0.007*"high"
+2024-09-27 21:53:56,501 - INFO - topic #2 (0.104): 0.018*"it" + 0.015*"like" + 0.013*"diet" + 0.010*"food" + 0.010*"you" + 0.009*"good" + 0.009*"think" + 0.009*"oil" + 0.008*"don" + 0.008*"nutrients"
+2024-09-27 21:53:56,501 - INFO - topic #3 (0.087): 0.015*"https" + 0.015*"www" + 0.013*"pmc" + 0.011*"gov" + 0.011*"iron" + 0.011*"coffee" + 0.010*"it" + 0.010*"eat" + 0.010*"ncbi" + 0.010*"nlm"
+2024-09-27 21:53:56,501 - INFO - topic #4 (0.138): 0.016*"fat" + 0.015*"it" + 0.011*"calories" + 0.010*"food" + 0.010*"eat" + 0.009*"foods" + 0.009*"don" + 0.009*"body" + 0.008*"diet" + 0.008*"tea"
+2024-09-27 21:53:56,501 - INFO - topic diff=0.229745, rho=0.447214
+2024-09-27 21:53:56,737 - INFO - -6.618 per-word bound, 98.2 perplexity estimate based on a held-out corpus of 1234 documents with 27705 words
+2024-09-27 21:53:56,737 - INFO - PROGRESS: pass 4, at document #1234/1234
+2024-09-27 21:53:56,911 - INFO - optimized alpha [0.081506446, 0.10472395, 0.101295546, 0.082899004, 0.13517612]
+2024-09-27 21:53:56,912 - INFO - topic #0 (0.082): 0.046*"science" + 0.025*"sources" + 0.019*"discussion" + 0.018*"claims" + 0.017*"nutrition" + 0.014*"subreddit" + 0.014*"peer" + 0.013*"reviewed" + 0.012*"debate" + 0.011*"hostility"
+2024-09-27 21:53:56,912 - INFO - topic #1 (0.105): 0.027*"oil" + 0.012*"oils" + 0.010*"people" + 0.010*"canola" + 0.009*"health" + 0.009*"olive" + 0.008*"diet" + 0.008*"omega" + 0.007*"high" + 0.007*"good"
+2024-09-27 21:53:56,912 - INFO - topic #2 (0.101): 0.020*"it" + 0.015*"like" + 0.014*"diet" + 0.011*"you" + 0.011*"food" + 0.010*"good" + 0.009*"think" + 0.009*"don" + 0.008*"nutrients" + 0.007*"time"
+2024-09-27 21:53:56,912 - INFO - topic #3 (0.083): 0.017*"https" + 0.017*"www" + 0.013*"pmc" + 0.013*"coffee" + 0.012*"gov" + 0.012*"iron" + 0.011*"ncbi" + 0.011*"nlm" + 0.011*"nih" + 0.011*"it"
+2024-09-27 21:53:56,912 - INFO - topic #4 (0.135): 0.016*"fat" + 0.014*"it" + 0.012*"calories" + 0.010*"food" + 0.010*"eat" + 0.010*"foods" + 0.009*"body" + 0.009*"don" + 0.008*"diet" + 0.008*"tea"
+2024-09-27 21:53:56,912 - INFO - topic diff=0.201094, rho=0.408248
+2024-09-27 21:53:57,142 - INFO - -6.597 per-word bound, 96.8 perplexity estimate based on a held-out corpus of 1234 documents with 27705 words
+2024-09-27 21:53:57,142 - INFO - PROGRESS: pass 5, at document #1234/1234
+2024-09-27 21:53:57,306 - INFO - optimized alpha [0.074903116, 0.10099517, 0.09973889, 0.07956655, 0.13313475]
+2024-09-27 21:53:57,306 - INFO - topic #0 (0.075): 0.049*"science" + 0.026*"sources" + 0.020*"discussion" + 0.020*"claims" + 0.018*"nutrition" + 0.015*"subreddit" + 0.014*"peer" + 0.014*"reviewed" + 0.013*"debate" + 0.012*"hostility"
+2024-09-27 21:53:57,307 - INFO - topic #1 (0.101): 0.029*"oil" + 0.013*"oils" + 0.010*"canola" + 0.010*"olive" + 0.010*"people" + 0.010*"health" + 0.008*"diet" + 0.008*"omega" + 0.008*"high" + 0.007*"good"
+2024-09-27 21:53:57,307 - INFO - topic #2 (0.100): 0.021*"it" + 0.015*"like" + 0.014*"diet" + 0.011*"you" + 0.011*"food" + 0.010*"good" + 0.009*"think" + 0.009*"don" + 0.008*"nutrients" + 0.008*"time"
+2024-09-27 21:53:57,307 - INFO - topic #3 (0.080): 0.019*"https" + 0.018*"www" + 0.015*"coffee" + 0.014*"pmc" + 0.013*"iron" + 0.013*"gov" + 0.011*"ncbi" + 0.011*"nlm" + 0.011*"nih" + 0.011*"it"
+2024-09-27 21:53:57,307 - INFO - topic #4 (0.133): 0.016*"fat" + 0.013*"it" + 0.012*"calories" + 0.010*"food" + 0.010*"foods" + 0.010*"eat" + 0.009*"body" + 0.009*"don" + 0.008*"diet" + 0.007*"tea"
+2024-09-27 21:53:57,307 - INFO - topic diff=0.178415, rho=0.377964
+2024-09-27 21:53:57,533 - INFO - -6.582 per-word bound, 95.8 perplexity estimate based on a held-out corpus of 1234 documents with 27705 words
+2024-09-27 21:53:57,533 - INFO - PROGRESS: pass 6, at document #1234/1234
+2024-09-27 21:53:57,695 - INFO - optimized alpha [0.06983233, 0.0981921, 0.098693326, 0.07697183, 0.13191362]
+2024-09-27 21:53:57,696 - INFO - topic #0 (0.070): 0.051*"science" + 0.027*"sources" + 0.021*"discussion" + 0.021*"claims" + 0.019*"nutrition" + 0.015*"subreddit" + 0.015*"peer" + 0.015*"reviewed" + 0.014*"debate" + 0.013*"hostility"
+2024-09-27 21:53:57,696 - INFO - topic #1 (0.098): 0.031*"oil" + 0.014*"oils" + 0.010*"olive" + 0.010*"canola" + 0.010*"health" + 0.009*"people" + 0.008*"omega" + 0.008*"diet" + 0.008*"high" + 0.007*"disease"
+2024-09-27 21:53:57,696 - INFO - topic #2 (0.099): 0.022*"it" + 0.015*"like" + 0.014*"diet" + 0.011*"you" + 0.011*"food" + 0.010*"good" + 0.009*"think" + 0.009*"don" + 0.009*"nutrients" + 0.008*"time"
+2024-09-27 21:53:57,696 - INFO - topic #3 (0.077): 0.021*"https" + 0.020*"www" + 0.016*"coffee" + 0.014*"iron" + 0.014*"pmc" + 0.013*"gov" + 0.012*"ncbi" + 0.012*"nlm" + 0.012*"nih" + 0.010*"it"
+2024-09-27 21:53:57,696 - INFO - topic #4 (0.132): 0.016*"fat" + 0.013*"it" + 0.013*"calories" + 0.010*"food" + 0.010*"foods" + 0.010*"eat" + 0.009*"body" + 0.009*"don" + 0.008*"diet" + 0.007*"tea"
+2024-09-27 21:53:57,696 - INFO - topic diff=0.159124, rho=0.353553
+2024-09-27 21:53:57,918 - INFO - -6.571 per-word bound, 95.1 perplexity estimate based on a held-out corpus of 1234 documents with 27705 words
+2024-09-27 21:53:57,918 - INFO - PROGRESS: pass 7, at document #1234/1234
+2024-09-27 21:53:58,076 - INFO - optimized alpha [0.065650366, 0.095705666, 0.097973615, 0.07491183, 0.13088483]
+2024-09-27 21:53:58,076 - INFO - topic #0 (0.066): 0.053*"science" + 0.028*"sources" + 0.022*"discussion" + 0.021*"claims" + 0.019*"nutrition" + 0.016*"subreddit" + 0.016*"peer" + 0.016*"reviewed" + 0.014*"debate" + 0.013*"hostility"
+2024-09-27 21:53:58,077 - INFO - topic #1 (0.096): 0.032*"oil" + 0.014*"oils" + 0.011*"olive" + 0.010*"canola" + 0.010*"health" + 0.009*"people" + 0.009*"omega" + 0.008*"high" + 0.008*"diet" + 0.007*"disease"
+2024-09-27 21:53:58,077 - INFO - topic #2 (0.098): 0.023*"it" + 0.015*"like" + 0.015*"diet" + 0.011*"you" + 0.011*"food" + 0.010*"good" + 0.009*"think" + 0.009*"don" + 0.009*"nutrients" + 0.008*"time"
+2024-09-27 21:53:58,077 - INFO - topic #3 (0.075): 0.023*"https" + 0.022*"www" + 0.017*"coffee" + 0.015*"iron" + 0.014*"pmc" + 0.013*"gov" + 0.012*"ncbi" + 0.012*"nlm" + 0.012*"nih" + 0.011*"com"
+2024-09-27 21:53:58,077 - INFO - topic #4 (0.131): 0.016*"fat" + 0.013*"calories" + 0.012*"it" + 0.011*"food" + 0.010*"foods" + 0.010*"eat" + 0.009*"body" + 0.009*"don" + 0.008*"diet" + 0.007*"people"
+2024-09-27 21:53:58,077 - INFO - topic diff=0.140986, rho=0.333333
+2024-09-27 21:53:58,292 - INFO - -6.563 per-word bound, 94.5 perplexity estimate based on a held-out corpus of 1234 documents with 27705 words
+2024-09-27 21:53:58,292 - INFO - PROGRESS: pass 8, at document #1234/1234
+2024-09-27 21:53:58,444 - INFO - optimized alpha [0.062236857, 0.09349643, 0.097573794, 0.073289625, 0.13012293]
+2024-09-27 21:53:58,444 - INFO - topic #0 (0.062): 0.054*"science" + 0.029*"sources" + 0.022*"discussion" + 0.022*"claims" + 0.019*"nutrition" + 0.016*"subreddit" + 0.016*"peer" + 0.016*"reviewed" + 0.015*"debate" + 0.014*"hostility"
+2024-09-27 21:53:58,444 - INFO - topic #1 (0.093): 0.034*"oil" + 0.015*"oils" + 0.011*"olive" + 0.010*"canola" + 0.010*"health" + 0.009*"people" + 0.009*"omega" + 0.008*"high" + 0.008*"disease" + 0.007*"diet"
+2024-09-27 21:53:58,444 - INFO - topic #2 (0.098): 0.024*"it" + 0.015*"like" + 0.015*"diet" + 0.012*"you" + 0.011*"food" + 0.010*"good" + 0.009*"think" + 0.009*"don" + 0.009*"nutrients" + 0.008*"time"
+2024-09-27 21:53:58,444 - INFO - topic #3 (0.073): 0.024*"https" + 0.023*"www" + 0.017*"coffee" + 0.016*"iron" + 0.014*"pmc" + 0.014*"gov" + 0.012*"com" + 0.012*"ncbi" + 0.012*"nlm" + 0.012*"nih"
+2024-09-27 21:53:58,445 - INFO - topic #4 (0.130): 0.017*"fat" + 0.013*"calories" + 0.012*"it" + 0.011*"food" + 0.010*"foods" + 0.010*"eat" + 0.009*"body" + 0.009*"diet" + 0.009*"don" + 0.008*"people"
+2024-09-27 21:53:58,445 - INFO - topic diff=0.124188, rho=0.316228
+2024-09-27 21:53:58,656 - INFO - -6.556 per-word bound, 94.1 perplexity estimate based on a held-out corpus of 1234 documents with 27705 words
+2024-09-27 21:53:58,657 - INFO - PROGRESS: pass 9, at document #1234/1234
+2024-09-27 21:53:58,805 - INFO - optimized alpha [0.059330292, 0.09151938, 0.097507514, 0.07201813, 0.12970643]
+2024-09-27 21:53:58,806 - INFO - topic #0 (0.059): 0.055*"science" + 0.029*"sources" + 0.023*"discussion" + 0.023*"claims" + 0.019*"nutrition" + 0.017*"subreddit" + 0.016*"peer" + 0.016*"reviewed" + 0.015*"debate" + 0.014*"hostility"
+2024-09-27 21:53:58,806 - INFO - topic #1 (0.092): 0.035*"oil" + 0.015*"oils" + 0.012*"olive" + 0.010*"canola" + 0.010*"health" + 0.009*"omega" + 0.008*"people" + 0.008*"high" + 0.008*"disease" + 0.007*"diet"
+2024-09-27 21:53:58,806 - INFO - topic #2 (0.098): 0.025*"it" + 0.015*"like" + 0.015*"diet" + 0.012*"you" + 0.011*"food" + 0.010*"good" + 0.009*"think" + 0.009*"nutrients" + 0.009*"don" + 0.009*"time"
+2024-09-27 21:53:58,806 - INFO - topic #3 (0.072): 0.026*"https" + 0.025*"www" + 0.017*"coffee" + 0.017*"iron" + 0.014*"gov" + 0.014*"pmc" + 0.013*"com" + 0.012*"ncbi" + 0.012*"nlm" + 0.012*"nih"
+2024-09-27 21:53:58,806 - INFO - topic #4 (0.130): 0.017*"fat" + 0.014*"calories" + 0.012*"it" + 0.011*"food" + 0.011*"foods" + 0.010*"eat" + 0.009*"body" + 0.009*"diet" + 0.009*"don" + 0.008*"people"
+2024-09-27 21:53:58,807 - INFO - topic diff=0.109136, rho=0.301511
+2024-09-27 21:53:58,807 - INFO - LdaModel lifecycle event {'msg': 'trained LdaModel(num_terms=1314, num_topics=5, decay=0.5, chunksize=2000) in 4.49s', 'datetime': '2024-09-27T21:53:58.807635', 'gensim': '4.1.2', 'python': '3.9.19 (main, May  6 2024, 20:12:36) [MSC v.1916 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.19045-SP0', 'event': 'created'}
+2024-09-27 21:53:58,807 - INFO - LDA model built successfully.
+2024-09-27 21:53:58,807 - INFO - Topic modeling took 4.53 seconds.
+2024-09-27 21:53:59,020 - INFO - Total time for processing phrase 'polyphenols' was 30.31 seconds.
+2024-09-27 21:53:59,020 - INFO - Processing phrase: polyphenol extract
+2024-09-27 21:53:59,209 - INFO - Data retrieval for phrase 'polyphenol extract' took 0.19 seconds.
+2024-09-27 21:53:59,210 - INFO - Preprocessing for topic modeling took 0.00 seconds.
+2024-09-27 21:53:59,210 - WARNING - No processed texts available for phrase 'polyphenol extract'. Skipping LDA modeling.
+2024-09-27 21:53:59,210 - INFO - Processing phrase: artificial flavoring substance
+2024-09-27 21:53:59,399 - INFO - Data retrieval for phrase 'artificial flavoring substance' took 0.19 seconds.
+2024-09-27 21:53:59,399 - INFO - Preprocessing for topic modeling took 0.00 seconds.
+2024-09-27 21:53:59,399 - WARNING - No processed texts available for phrase 'artificial flavoring substance'. Skipping LDA modeling.
+2024-09-27 21:53:59,404 - INFO - Converted results to DataFrame.
+2024-09-27 21:53:59,443 - INFO - Saved data with weights to 'data_with_weights.csv'.
+2024-09-27 21:53:59,444 - INFO - Converted performance data to DataFrame.
+2024-09-27 21:53:59,725 - INFO - Saved performance results to 'perf_results.xlsx'.
+2024-09-27 21:53:59,725 - INFO - Total execution time: 88.66 seconds.

@@ -1,0 +1,20 @@
+# config.yaml
+
+phrases:
+  - "yeast extract"
+  - "natural aroma"
+  - "natural flavoring"
+  - "aroma"
+  - "polyphenols"
+  - "polyphenol extract"
+  - "artificial flavoring substance"
+
+reddit:
+  client_id: "YOUR_CLIENT_ID"
+  client_secret: "YOUR_CLIENT_SECRET"
+  user_agent: "PhraseSentimentAnalyzer/0.1 by YOUR_USERNAME"
+  # Optional: List of subreddits to search
+  subreddits:
+    - "nutrition"
+    - "food"
+    - "health"
