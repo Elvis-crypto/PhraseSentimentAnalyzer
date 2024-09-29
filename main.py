@@ -7,6 +7,7 @@ from data_retrieval import DataRetriever
 from preprocessing import Preprocessor
 from topic_modeling import TopicModeler
 import pandas as pd
+import numpy as np
 
 def main():
     # Configure logging
@@ -26,6 +27,7 @@ def main():
     config = Config()
     retriever = DataRetriever(config)
     preprocessor = Preprocessor()
+    # Initialize TopicModeler with desired number of topics
     topic_modeler = TopicModeler(num_topics=5)
     config_end_time = time.time()
     config_time = config_end_time - config_start_time
@@ -77,7 +79,7 @@ def main():
 
         # Build LDA model
         topic_modeling_start_time = time.time()
-        lda_model = topic_modeler.build_lda_model(processed_texts)
+        lda_model = topic_modeler.build_lda_model(processed_texts, no_below=1, no_above=0.5)  # Adjusted filter parameters
         topic_modeling_end_time = time.time()
         topic_modeling_time = topic_modeling_end_time - topic_modeling_start_time
         logging.info(f"Topic modeling took {topic_modeling_time:.2f} seconds.")
@@ -94,21 +96,36 @@ def main():
             })
             continue
 
-        # Compute topic distribution for the original phrase
+        # Compute topic distribution for the phrase itself
         phrase_tokens = preprocessor.preprocess_for_topic_modeling([phrase])[0]
         phrase_topic_vector = topic_modeler.compute_topic_distribution(phrase_tokens)
+
+        # Handle case where phrase_topic_vector could not be computed
+        if not np.any(phrase_topic_vector):
+            logging.warning(f"Phrase topic vector for '{phrase}' is empty. Skipping sentiment analysis for this phrase.")
+            perf_data.append({
+                'phrase': phrase,
+                'retrieval_time': retrieval_time,
+                'preprocessing_time': preprocessing_time,
+                'topic_modeling_time': topic_modeling_time,
+                'phrase_total_time': time.time() - phrase_start_time,
+                'num_documents': 0
+            })
+            continue
 
         # Prepare data for each document
         doc_data = []
         idx = 0  # Index to access processed_texts
+
         # Process submissions
         for sub in submissions:
             text = sub['title'] + ' ' + (sub['selftext'] or '')
-            tokens = processed_texts[idx]
-            idx += 1
+            tokens = preprocessor.preprocess_for_topic_modeling([text])[0]
+            # Compute topic distribution
             doc_topic_vector = topic_modeler.compute_topic_distribution(tokens)
+            # Compute relevance score
             relevance_score = topic_modeler.compute_relevance_score(doc_topic_vector, phrase_topic_vector)
-            # Thread-based weight (depth 0)
+            # Thread-based weight (depth 0 for submissions)
             depth_weight = 1.0
             # Final weight
             final_weight = relevance_score * depth_weight
@@ -125,14 +142,17 @@ def main():
                 'final_weight': final_weight
             }
             doc_data.append(doc_info)
+            idx += 1  # Move to next processed_text
+
         # Process comments and replies
         for comment in comments_and_replies:
             text = comment['body']
-            tokens = processed_texts[idx]
-            idx += 1
+            tokens = preprocessor.preprocess_for_topic_modeling([text])[0]
+            # Compute topic distribution
             doc_topic_vector = topic_modeler.compute_topic_distribution(tokens)
+            # Compute relevance score
             relevance_score = topic_modeler.compute_relevance_score(doc_topic_vector, phrase_topic_vector)
-            # Thread-based weight
+            # Thread-based weight based on depth
             depth_weight = 1 / (comment['depth'] + 1)
             # Final weight
             final_weight = relevance_score * depth_weight
@@ -150,6 +170,7 @@ def main():
                 'final_weight': final_weight
             }
             doc_data.append(doc_info)
+            idx += 1  # Move to next processed_text
 
         # Collect performance data for this phrase
         phrase_end_time = time.time()

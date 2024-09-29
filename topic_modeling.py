@@ -12,7 +12,7 @@ class TopicModeler:
         self.id2word = None
         self.corpus = None
 
-    def build_lda_model(self, processed_texts):
+    def build_lda_model(self, processed_texts, no_below=5, no_above=0.5):
         """
         Build LDA model from processed texts.
         Returns the LDA model if successful, else None.
@@ -21,7 +21,7 @@ class TopicModeler:
             logging.warning("No processed texts provided for LDA modeling.")
             return None
 
-        self.id2word, self.corpus = self.create_dictionary_corpus(processed_texts)
+        self.id2word, self.corpus = self.create_dictionary_corpus(processed_texts, no_below, no_above)
 
         if not self.corpus:
             logging.warning("The corpus is empty after creating the dictionary.")
@@ -49,14 +49,14 @@ class TopicModeler:
             logging.error(f"Failed to build LDA model: {e}")
             return None
 
-    def create_dictionary_corpus(self, texts):
+    def create_dictionary_corpus(self, texts, no_below=5, no_above=0.5):
         """
         Create a dictionary and corpus for topic modeling.
         """
         # Create Dictionary
         id2word = corpora.Dictionary(texts)
         # Filter extremes to remove very rare and very common words
-        id2word.filter_extremes(no_below=5, no_above=0.5)
+        id2word.filter_extremes(no_below=no_below, no_above=no_above)
         # Create Corpus
         corpus = [id2word.doc2bow(text) for text in texts]
         return id2word, corpus
@@ -105,12 +105,15 @@ if __name__ == "__main__":
     preprocessor = Preprocessor()
     processed_texts = preprocessor.preprocess_for_topic_modeling(texts)
 
-    # Build LDA model
+    # Build LDA model with adjusted filter parameters for testing
     topic_modeler = TopicModeler(num_topics=2)
-    lda_model = topic_modeler.build_lda_model(processed_texts)
+    lda_model = topic_modeler.build_lda_model(processed_texts, no_below=1, no_above=0.5)
 
     # Compute topic distributions
-    text_tokens = processed_texts[0]
-    doc_topic_vector = topic_modeler.compute_topic_distribution(text_tokens)
-    print("Document topic vector:")
-    print(doc_topic_vector)
+    if lda_model:
+        text_tokens = processed_texts[0]
+        doc_topic_vector = topic_modeler.compute_topic_distribution(text_tokens)
+        print("Document topic vector:")
+        print(doc_topic_vector)
+    else:
+        print("LDA model was not built.")

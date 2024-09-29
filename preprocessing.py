@@ -45,6 +45,13 @@ class Preprocessor:
         corpus = [id2word.doc2bow(text) for text in texts]
         return id2word, corpus
 
+    def lemmatize_text(self, text):
+        """
+        Lemmatize a single text string.
+        """
+        doc = self.nlp(text)
+        return ' '.join([token.lemma_.lower() for token in doc if not token.is_punct])
+
 # Test the module
 if __name__ == "__main__":
     # Sample texts
@@ -61,3 +68,8 @@ if __name__ == "__main__":
     id2word, corpus = preprocessor.create_dictionary_corpus(processed_texts)
     print("\nDictionary tokens:")
     print(id2word.token2id)
+    # Test lemmatization
+    test_text = "Natural flavors are added to enhance the taste."
+    lemmatized = preprocessor.lemmatize_text(test_text)
+    print("\nLemmatized text:")
+    print(lemmatized)
