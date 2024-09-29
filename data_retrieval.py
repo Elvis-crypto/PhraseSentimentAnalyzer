@@ -7,20 +7,21 @@ import logging
 import spacy
 from spacy.matcher import PhraseMatcher
 
-# Configure logging once at the top
-logging.basicConfig(
-    filename='data_retrieval.log',
-    level=logging.DEBUG,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-logging.debug("Logging configured.")
-
 class DataRetriever:
     def __init__(self, config):
         """
         Initialize the DataRetriever with Reddit API credentials and configuration settings.
         """
         self.config = config
+
+        # Configure logging once at the top
+        logging.basicConfig(
+            filename='data_retrieval.log',
+            level=logging.DEBUG,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        logging.debug("Logging configured.")
+
         self.reddit = praw.Reddit(
             client_id=self.config.reddit_config['client_id'],
             client_secret=self.config.reddit_config['client_secret'],
@@ -76,7 +77,6 @@ class DataRetriever:
             # Logging the added patterns for verification
             logging.debug(f"Added patterns for phrase '{phrase}': {[str(p) for p in patterns]}")
 
-
     def create_base_form(self, lemmatized_phrase):
         """
         Create the base form of a lemmatized phrase by removing suffixes like 'ing' if applicable.
@@ -106,12 +106,12 @@ class DataRetriever:
         # Log the text being analyzed
         logging.debug(f"Analyzing text: '{text}'")
 
-        # Debugging logs to verify matching
         if matches:
             matched_phrases = [doc[start:end].text for match_id, start, end in matches]
             logging.debug(f"Matched phrases in text: {matched_phrases}")
         else:
             logging.debug("No matched phrases found in text.")
+
         return bool(matches)
 
     def fetch_submissions(self, phrase, limit=100):
@@ -153,14 +153,16 @@ class DataRetriever:
                 logging.debug(f"Comment ID: {current_comment.id}")
                 logging.debug(f"Depth: {depth}")
                 logging.debug(f"Contains Phrase: {contains_phrase}")
-                # Collect comment data
+                # Collect comment data with timestamp and author
                 comment_data = {
                     'id': current_comment.id,
                     'parent_id': parent_id,
                     'body': current_comment.body,
                     'score': current_comment.score,
                     'depth': depth,
-                    'contains_phrase': contains_phrase
+                    'contains_phrase': contains_phrase,
+                    'timestamp': current_comment.created_utc,  # Added timestamp
+                    'author': current_comment.author.name if current_comment.author else '[deleted]'
                 }
                 matching_comments.append(comment_data)
                 # Add replies to the queue
@@ -174,7 +176,7 @@ class DataRetriever:
         """
         submissions = self.fetch_submissions(phrase, limit)
         comments_and_replies = self.fetch_comments_and_replies(submissions, phrase)
-        # Collect submission data
+        # Collect submission data with timestamp and author
         submission_data = []
         for submission in submissions:
             contains_phrase = self.phrase_in_text(phrase, submission.title + ' ' + (submission.selftext or ''))
@@ -183,8 +185,10 @@ class DataRetriever:
                 'title': submission.title,
                 'selftext': submission.selftext,
                 'score': submission.score,
+                'depth': 0,  # Assuming depth 0 for submissions
                 'contains_phrase': contains_phrase,
-                'depth': 0  # Depth of submission is 0
+                'timestamp': submission.created_utc,  # Added timestamp
+                'author': submission.author.name if submission.author else '[deleted]'
             }
             submission_data.append(submission_info)
         return submission_data, comments_and_replies

@@ -8,6 +8,10 @@ from preprocessing import Preprocessor
 from topic_modeling import TopicModeler
 import pandas as pd
 import numpy as np
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pickle
 
 def main():
     # Configure logging
@@ -17,6 +21,7 @@ def main():
         format='%(asctime)s - %(levelname)s - %(message)s',
         level=logging.INFO
     )
+    logging.debug("Logging configured.")
 
     # Record overall start time
     overall_start_time = time.time()
@@ -32,6 +37,10 @@ def main():
     config_end_time = time.time()
     config_time = config_end_time - config_start_time
     logging.info(f"Configuration and initialization took {config_time:.2f} seconds.")
+
+    # Initialize Sentiment Analyzer
+    sentiment_analyzer = SentimentIntensityAnalyzer()
+    logging.info("Initialized VADER Sentiment Analyzer.")
 
     # Initialize lists to store results and performance data
     all_results = []
@@ -72,6 +81,7 @@ def main():
                 'retrieval_time': retrieval_time,
                 'preprocessing_time': preprocessing_time,
                 'topic_modeling_time': 0,
+                'sentiment_analysis_time': 0,
                 'phrase_total_time': time.time() - phrase_start_time,
                 'num_documents': 0
             })
@@ -91,6 +101,7 @@ def main():
                 'retrieval_time': retrieval_time,
                 'preprocessing_time': preprocessing_time,
                 'topic_modeling_time': topic_modeling_time,
+                'sentiment_analysis_time': 0,
                 'phrase_total_time': time.time() - phrase_start_time,
                 'num_documents': 0
             })
@@ -108,6 +119,7 @@ def main():
                 'retrieval_time': retrieval_time,
                 'preprocessing_time': preprocessing_time,
                 'topic_modeling_time': topic_modeling_time,
+                'sentiment_analysis_time': 0,
                 'phrase_total_time': time.time() - phrase_start_time,
                 'num_documents': 0
             })
@@ -129,6 +141,17 @@ def main():
             depth_weight = 1.0
             # Final weight
             final_weight = relevance_score * depth_weight
+            # Sentiment analysis
+            sentiment = sentiment_analyzer.polarity_scores(text)
+            sentiment_score = sentiment['compound']
+            # Combined sentiment weight
+            combined_sentiment_weight = final_weight * sentiment_score
+            # Alternate score including upvote score
+            alternate_score = combined_sentiment_weight + sub['score']
+            # Collect timestamp
+            timestamp = sub['timestamp']
+            # Collect author
+            author = sub['author']
             doc_info = {
                 'phrase': phrase,
                 'id': sub['id'],
@@ -137,9 +160,14 @@ def main():
                 'depth': sub['depth'],
                 'score': sub['score'],
                 'contains_phrase': sub['contains_phrase'],
+                'timestamp': timestamp,
+                'author': author,
                 'relevance_score': relevance_score,
                 'depth_weight': depth_weight,
-                'final_weight': final_weight
+                'final_weight': final_weight,
+                'sentiment_score': sentiment_score,
+                'combined_sentiment_weight': combined_sentiment_weight,
+                'alternate_score': alternate_score
             }
             doc_data.append(doc_info)
             idx += 1  # Move to next processed_text
@@ -156,6 +184,17 @@ def main():
             depth_weight = 1 / (comment['depth'] + 1)
             # Final weight
             final_weight = relevance_score * depth_weight
+            # Sentiment analysis
+            sentiment = sentiment_analyzer.polarity_scores(text)
+            sentiment_score = sentiment['compound']
+            # Combined sentiment weight
+            combined_sentiment_weight = final_weight * sentiment_score
+            # Alternate score including upvote score
+            alternate_score = combined_sentiment_weight + comment['score']
+            # Collect timestamp
+            timestamp = comment['timestamp']
+            # Collect author
+            author = comment['author']
             doc_info = {
                 'phrase': phrase,
                 'id': comment['id'],
@@ -165,9 +204,14 @@ def main():
                 'depth': comment['depth'],
                 'score': comment['score'],
                 'contains_phrase': comment['contains_phrase'],
+                'timestamp': timestamp,
+                'author': author,
                 'relevance_score': relevance_score,
                 'depth_weight': depth_weight,
-                'final_weight': final_weight
+                'final_weight': final_weight,
+                'sentiment_score': sentiment_score,
+                'combined_sentiment_weight': combined_sentiment_weight,
+                'alternate_score': alternate_score
             }
             doc_data.append(doc_info)
             idx += 1  # Move to next processed_text
@@ -180,6 +224,7 @@ def main():
             'retrieval_time': retrieval_time,
             'preprocessing_time': preprocessing_time,
             'topic_modeling_time': topic_modeling_time,
+            'sentiment_analysis_time': 0,  # Placeholder if sentiment analysis time is tracked separately
             'phrase_total_time': phrase_total_time,
             'num_documents': len(doc_data)
         })
@@ -188,6 +233,23 @@ def main():
         # Append to all_results
         all_results.extend(doc_data)
 
+        # Save intermediate data for reloadable analysis
+        intermediate_filename = f'{phrase.replace(" ", "_")}_data.pkl'
+        with open(intermediate_filename, 'wb') as f:
+            pickle.dump(doc_data, f)
+        logging.info(f"Saved intermediate data to '{intermediate_filename}'.")
+
+    # After processing all phrases, save the results
+    with open('processed_data.pkl', 'wb') as f:
+        pickle.dump(all_results, f)
+    logging.info("Saved processed data to 'processed_data.pkl'.")
+
+    # Save the LDA model and dictionary
+    with open('lda_model.pkl', 'wb') as f:
+        pickle.dump(topic_modeler.model, f)
+    with open('lda_dictionary.pkl', 'wb') as f:
+        pickle.dump(topic_modeler.corpus, f)
+    logging.info("Saved LDA model and dictionary.")
     # Convert results to a DataFrame for further analysis
     df_results = pd.DataFrame(all_results)
     logging.info("Converted results to DataFrame.")
@@ -195,6 +257,11 @@ def main():
     # Save results to CSV
     df_results.to_csv('data_with_weights.csv', index=False)
     logging.info("Saved data with weights to 'data_with_weights.csv'.")
+
+    # Save DataFrame in a reloadable format (pickle)
+    with open('data_with_weights.pkl', 'wb') as f:
+        pickle.dump(df_results, f)
+    logging.info("Saved DataFrame to 'data_with_weights.pkl' for reloadable analysis.")
 
     # Convert performance data to a DataFrame
     df_perf = pd.DataFrame(perf_data)
